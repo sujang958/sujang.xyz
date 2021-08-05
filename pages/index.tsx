@@ -142,6 +142,17 @@ const Home: FC = () => {
                 <p className="underline text-xs">
                     <Link 
                       passHref={true}
+                      href="https://github.com/sujang958/weather"
+                    >
+                      weather.sujang.xyz - sujang958
+                    </Link>
+                  </p>
+                <p className="text-xs">Simple weather web.</p>
+              </div>
+              <div className="mt-1 rounded-md p-2 shadow">
+                <p className="underline text-xs">
+                    <Link 
+                      passHref={true}
                       href="https://github.com/sujang958/oauth-discord"
                     >
                       oauth-discord - sujang958
