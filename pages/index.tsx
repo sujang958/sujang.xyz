@@ -19,7 +19,7 @@ const Home: FC = () => {
   return (
     <div className="min-h-screen w-screen text-left overflow-x-hidden">
       <div className="text-center gradation-animation p-14 shawdow-lg w-screen">
-        <p className="text-2xl md:text-4xl fade-in">Hello World_</p>
+        <p className="text-2xl md:text-4xl fade-in">&gt; Hello World_</p>
         <Link passHref={true} href="https://github.com/sujang958">
           <p className="text-xs md:text-sm fade-in underline">
             Visit Github
@@ -30,7 +30,7 @@ const Home: FC = () => {
         <div className="mt-5 md:mt-9 md:text-left">
           <div className="mt-1 break-words">
             <p className="text-2xl">Hi!, I&#39;m Sujang958</p>
-            <p className="text-base">I&#39;m a fullstack developer</p>
+            <p className="text-base">I&#39;m a student fullstack(maybe) developer</p>
           </div>
           <div className="mt-8">
             <p className="text-xl">Skills</p>
