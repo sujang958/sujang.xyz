@@ -39,7 +39,7 @@ const Home: FC = () => {
           </p>
         </div>
       </div>
-      <div className="pt-36 px-8">
+      <div className="pt-36 px-8 md:px-28">
         <div className="mt-5 md:mt-9">
           <div className="mt-1 break-words">
             <p className="text-2xl">Hi!, I&#39;m Sujang958</p>
