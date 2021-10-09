@@ -1,4 +1,4 @@
-import { Dispatch, FC, MouseEvent, SetStateAction, useState } from "react"
+import { Dispatch, FC, MouseEvent, MouseEventHandler, SetStateAction, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -13,29 +13,42 @@ const clickHandler = (isHidden: number, setIsHidden: Dispatch<SetStateAction<num
   }
 }
 
+const bongocatHandler: MouseEventHandler<HTMLParagraphElement> = async () => {
+  const audio = new Audio("/audio/meow.mp3")
+  await audio.play()
+
+  const bongoMeow = document.querySelector('.bongo-meow')
+  bongoMeow?.classList.replace("z-0", "z-20")
+  setTimeout(() => bongoMeow?.classList.replace("z-20", "z-0"), 680)
+}
+
 const Home: FC = () => {
   const [isHidden, setIsHidden] = useState(1)
 
   return (
-    <div className="min-h-screen w-screen text-left overflow-x-hidden">
-      <div className="text-center gradation-animation p-14 shawdow-lg w-screen">
-        <p className="text-2xl md:text-4xl fade-in">&gt; Hello World_</p>
-        <Link passHref={true} href="https://github.com/sujang958">
-          <p className="text-xs md:text-sm fade-in underline">
-            Visit Github
+    <div className="text-left">
+      <div className="realtive text-center">
+        <div className="bg-white z-10 w-full absolute bg-auto bg-center bg-no-repeat bg-bongocat p-14 shawdow-lg text-black">
+          <p className="bongo cursor-pointer text-xs select-none fade-in underline" onClick={bongocatHandler}>
+            Meow
           </p>
-        </Link>
+        </div>
+        <div className="bongo-meow bg-white z-0 w-full absolute bg-auto bg-top-4 bg-no-repeat bg-bongocat-meow p-14 shawdow-lg text-black">
+          <p className="bongo cursor-pointer text-xs select-none fade-in underline" onClick={bongocatHandler}>
+            Meow!
+          </p>
+        </div>
       </div>
-      <div className="px-8 mx-auto md:max-w-2xl">
-        <div className="mt-5 md:mt-9 md:text-left">
+      <div className="pt-36 px-8">
+        <div className="mt-5 md:mt-9">
           <div className="mt-1 break-words">
             <p className="text-2xl">Hi!, I&#39;m Sujang958</p>
-            <p className="text-base">I&#39;m a student fullstack(maybe) developer</p>
+            <p className="text-base">I&#39;m a student developer</p>
           </div>
           <div className="mt-8">
             <p className="text-xl">Skills</p>
             <p className="text-base mt-1 md:mt-2">
-              <p className="ctox text-xs underline" onClick={e => clickHandler(isHidden, setIsHidden, e)}>Click to {(isHidden == 1 ? 'see' : 'hide')}</p>
+              <p className="cursor-pointer text-xs underline" onClick={e => clickHandler(isHidden, setIsHidden, e)}>Click to {(isHidden == 1 ? 'see' : 'hide')}</p>
               <div className="mt-1.5 md:mt-2 skills hidden">
                 <Image 
                   src={"https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"}
@@ -124,42 +137,15 @@ const Home: FC = () => {
               </div>
             </p>
           </div>
-          <div className="mt-8 text-left break-words">
-            <p className="text-xl">Projects</p>
-            <div className="mx-1">
-              <div className="mt-1 rounded-md p-2 shadow">
-                <p className="underline text-xs">
-                    <Link 
-                      passHref={true}
-                      href="https://github.com/sujang958/sujang.xyz"
-                    >
-                      sujang.xyz - sujang958
-                    </Link>
-                  </p>
-                <p className="text-xs">The page you&#39;re looking at.</p>
-              </div>
-              <div className="mt-1 rounded-md p-2 shadow">
-                <p className="underline text-xs">
-                    <Link 
-                      passHref={true}
-                      href="https://github.com/sujang958/weather"
-                    >
-                      weather.sujang.xyz - sujang958
-                    </Link>
-                  </p>
-                <p className="text-xs">Simple weather web.</p>
-              </div>
-              <div className="mt-1 rounded-md p-2 shadow">
-                <p className="underline text-xs">
-                    <Link 
-                      passHref={true}
-                      href="https://github.com/sujang958/oauth-discord"
-                    >
-                      oauth-discord - sujang958
-                    </Link>
-                </p>
-                <p className="text-xs">Discord Oauth library for nodejs</p>
-              </div>
+        </div>
+        <div className="mt-8 md:mt-12">
+          <p className="text-xl">Portfolio</p>
+          <div className="mt-0.5 p-2 flex flex-col">
+            <div className="p-2 flex-1 shadow-lg">
+              <Link href="/music" passHref={true}>
+                <p className="cursor-pointer underline text-base">Music - made by sujang958</p>
+              </Link>
+              <p className="ml-0.5 mt-1 text-sm">Simple music web app.</p>
             </div>
           </div>
         </div>
