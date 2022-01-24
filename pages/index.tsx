@@ -8,18 +8,18 @@ const Home: FC = () => {
     <div className="flex flex-col">
       <div className="flex flex-col min-h-screen px-5">
         <div className="flex-1 flex flex-col place-content-center gap-y-4">
-          <div className="">
-            <p className="text-7xl">
+          <div className="text-3xl md:text-7xl">
+            <p>
               Hello, <span className="font-bold">I{"'"}m Seonghun Cho</span>
             </p>
-            <p className="text-7xl">
+            <p>
               a.k.a <span className="font-bold">Sujang</span>
             </p>
           </div>
-          <div className="">
+          <div>
             <div className="flex-1 flex-col">
               <div className="flex-1">
-                <button className="bg-black text-white py-2.5 px-4 text-xl">
+                <button className="bg-black text-white py-2.5 px-4 text-base md:text-xl">
                   <Link href="#about" passHref>
                     About me
                   </Link>
@@ -34,14 +34,14 @@ const Home: FC = () => {
         id="about"
       >
         <div className="flex flex-col">
-          <p className="text-6xl font-bold">About Me</p>
-          <div className="mt-6 text-2xl">
+          <p className="text-5xl md:text-6xl font-bold">About Me</p>
+          <div className="mt-4 md:mt-6 text-xl md:text-2xl">
             <p>I{"'"}m a developer who loves things of Javascript.</p>
-            <p className="mt-6">I make something from my ideas.</p>
+            <p className="mt-4 md:mt-6">I make something from my ideas.</p>
           </div>
-          <div className="mt-10 text-3xl">
-            <p>❤️ Techs ❤️</p>
-            <div className="pt-4 px-2 flex flex-wrap gap-2 text-base">
+          <div className="mt-6 md:mt-10 text-3xl">
+            <p className="font-semibold">❤️ Techs ❤️</p>
+            <div className="pt-4 px-2 flex flex-wrap gap-2 text-sm md:text-base">
               <p className="cursor-pointer transition duration-300 hover:bg-slate-300 bg-slate-200 py-1 px-3">
                 TypeScript
               </p>
@@ -92,10 +92,10 @@ const Home: FC = () => {
               </p>
             </div>
           </div>
-          <div className="mt-12">
-            <p className="text-4xl font-semibold">⌨️ Projects</p>
+          <div className="mt-8 md:mt-12">
+            <p className="text-3xl md:text-4xl font-semibold">⌨️ Projects</p>
             <div className="flex flex-col mt-6 px-6">
-              <p className="text-2xl">
+              <p className="text-xl md:text-2xl">
                 <a
                   href="https://smeals.co"
                   target="_blank"
@@ -108,21 +108,21 @@ const Home: FC = () => {
               </p>
             </div>
           </div>
-          <div className="mt-12">
-            <p className="text-4xl font-semibold">✉️ Contacts</p>
-            <div className="flex flex-col mt-6 px-6">
-              <p className="text-2xl">sujang@kakao.com</p>
-              <p className="text-2xl">
-                _someone#4590 <span className="text-lg">(Discord)</span>
+          <div className="mt-8 md:mt-12">
+            <p className="text-3xl md:text-4xl font-semibold">✉️ Contacts</p>
+            <div className="flex flex-col mt-6 px-6 text-xl md:text-2xl">
+              <p>sujang@kakao.com</p>
+              <p>
+                _someone#4590 <span className="text-sm md:text-lg">(Discord)</span>
               </p>
             </div>
           </div>
-          <div className="mt-12">
-            <p className="text-4xl font-semibold">💵 Donate</p>
+          <div className="mt-8 md:mt-12">
+            <p className="text-3xl md:text-4xl font-semibold">💵 Donate</p>
             <div className="mt-3 px-4">
               <a
                 href="https://www.buymeacoffee.com/sujang958"
-                className="cursor-pointer underline text-3xl"
+                className="cursor-pointer underline text-2xl md:text-3xl"
               >
                 Buy me a coffee!
               </a>
