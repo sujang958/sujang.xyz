@@ -1,10 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap');
 
-body {
-  font-display: swap;
-  font-family: 'Noto Sans KR', sans-serif;
-  background-color: #1F2937;
+html {
+  scroll-behavior: smooth;
 }
