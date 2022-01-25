@@ -5,8 +5,8 @@ const Home: FC = () => {
   const [isHidden, setIsHidden] = useState(1)
 
   return (
-    <div className="flex flex-col">
-      <div className="flex flex-col min-h-screen px-5">
+    <div className="max-w-5xl flex flex-col">
+      <div className="w-full flex flex-col min-h-screen px-5">
         <div className="flex-1 flex flex-col place-content-center gap-y-4">
           <div className="text-3xl md:text-7xl">
             <p>
@@ -113,7 +113,8 @@ const Home: FC = () => {
             <div className="flex flex-col mt-6 px-6 text-xl md:text-2xl">
               <p>sujang@kakao.com</p>
               <p>
-                _someone#4590 <span className="text-sm md:text-lg">(Discord)</span>
+                _someone#4590{" "}
+                <span className="text-sm md:text-lg">(Discord)</span>
               </p>
             </div>
           </div>
