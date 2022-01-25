@@ -3,13 +3,13 @@ import Link from "next/link"
 
 const Header: FC = () => {
   return (
-    <div className="bg-white py-3 flex flex-row justify-between">
-      <div className="text-2xl font-bold">
+    <div className="dark:bg-black dark:text-white bg-white py-3 flex flex-row justify-between px-3 md:px-0 transition duration-300">
+      <div className="text-xl md:text-2xl font-bold">
         <Link href="/" passHref>
           Seonghun Cho
         </Link>
       </div>
-      <div className="flex flex-row space-x-3.5 text-xl">
+      <div className="flex flex-row space-x-3.5 text-base md:text-xl mt-0.5 md:mt-0">
         <div className="hover:underline cursor-pointer">
           <Link href="/#about" passHref>
             About
@@ -25,7 +25,19 @@ const Header: FC = () => {
             Lab
           </Link>
         </div>
-        <div className="pl-1.5 mt-1">
+        <div
+          className="pl-1.5 mt-0.5 md:mt-1"
+          onClick={() => {
+            const theme = localStorage.getItem("theme")
+            if (theme && theme === "dark") {
+              document.body.classList.remove("dark")
+              localStorage.setItem("theme", "light")
+            } else {
+              document.body.classList.add("dark")
+              localStorage.setItem("theme", "dark")
+            }
+          }}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="cursor-pointer h-5 w-5"
