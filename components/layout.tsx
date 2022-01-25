@@ -4,13 +4,8 @@ import Header from "./header"
 const Layout: FC<ReactNode> = ({ children }) => {
   useEffect(() => {
     const dark = localStorage.getItem("theme")
-    if (dark && dark === "dark") {
-      document.body.classList.remove("dark")
-      localStorage.setItem("theme", "light")
-    } else {
-      document.body.classList.add("dark")
-      localStorage.setItem("theme", "dark")
-    }
+    if (dark && dark === "dark") document.body.classList.add("dark")
+    else document.body.classList.remove("dark")
   }, [])
 
   return (
