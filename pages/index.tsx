@@ -5,7 +5,7 @@ const Home: FC = () => {
   const [isHidden, setIsHidden] = useState(1)
 
   return (
-    <div className="dark:bg-black dark:text-white transition duration-300 max-w-5xl flex flex-col">
+    <div className="max-w-5xl flex flex-col self-center">
       <div className="w-full flex flex-col min-h-screen px-5">
         <div className="flex-1 flex flex-col place-content-center gap-y-4">
           <div className="text-3xl md:text-7xl">

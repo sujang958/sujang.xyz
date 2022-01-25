@@ -15,10 +15,12 @@ const Layout: FC<ReactNode> = ({ children }) => {
 
   return (
     <div className="relative min-w-full font-outfit flex flex-col">
-      <header className="fixed top-0 max-w-5xl w-full self-center">
+      <header className="self-center fixed top-0 max-w-5xl w-full">
         <Header />
       </header>
-      <div className="self-center flex flex-col">{children}</div>
+      <div className="self-center flex flex-col w-full dark:bg-black dark:text-white transition duration-300">
+        {children}
+      </div>
     </div>
   )
 }

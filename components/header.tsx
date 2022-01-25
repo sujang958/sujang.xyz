@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const Header: FC = () => {
   return (
-    <div className="dark:bg-black dark:text-white bg-white py-3 flex flex-row justify-between px-3 md:px-0 transition duration-300">
+    <div className="bg-white py-3 flex flex-row justify-between px-3 md:px-0 dark:bg-black dark:text-white transition duration-300">
       <div className="text-xl md:text-2xl font-bold">
         <Link href="/" passHref>
           Seonghun Cho
