@@ -2,7 +2,7 @@ import { NextPage } from "next"
 
 const Page404: NextPage = () => {
   return (
-    <div className="min-h-screen w-full flex flex-col items-center place-content-center">
+    <div className="min-h-screen flex flex-col items-center place-content-center">
       <div className="max-w-5xl">
         <p className="text-6xl font-semibold">Not Found.</p>
         <p
