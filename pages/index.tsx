@@ -10,7 +10,13 @@ const Home: FC = () => {
         <div className="flex-1 flex flex-col place-content-center gap-y-4">
           <div className="text-3xl md:text-7xl">
             <p>
-              Hello, <span className="font-bold">I{"'"}m Seonghun Cho</span>
+              Hello,{" "}
+              <span
+                className="font-bold"
+                onClick={() => alert("Internationally, it's Cho Song Hun.")}
+              >
+                I{"'"}m Seonghun Cho
+              </span>
             </p>
             <p>
               a.k.a <span className="font-bold">Sujang</span>

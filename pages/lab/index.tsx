@@ -26,6 +26,8 @@ const LabIndex: NextPage = () => {
               <a
                 href="https://react-query.tanstack.com/"
                 className="underline cursor-pointer"
+                target="_blank"
+                rel="noreferrer"
               >
                 React-Query
               </a>

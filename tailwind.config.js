@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         outfit: ["Outfit", "sans-serif"],
       },
+      colors: {
+        "darkgray-chocolate": "#2b2b2b",
+      },
     },
   },
   plugins: [],
