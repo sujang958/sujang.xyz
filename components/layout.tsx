@@ -17,7 +17,7 @@ const Layout: FC<ReactNode> = ({ children }) => {
         <header className="fixed top-0 max-w-5xl w-full">
           <Header />
         </header>
-        <div className="flex flex-col min-h-screen w-full dark:bg-black dark:text-white transition duration-300">
+        <div className="flex flex-col min-h-screen w-full dark:bg-black dark:text-white transition duration-300 overflow-auto">
           {children}
         </div>
       </QueryClientProvider>

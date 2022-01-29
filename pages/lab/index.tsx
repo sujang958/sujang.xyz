@@ -4,19 +4,19 @@ import Link from "next/link"
 const LabIndex: NextPage = () => {
   return (
     <div className="flex flex-col self-center max-w-5xl">
-      <div className="pt-32 px-14">
-        <p className="text-6xl font-semibold">Funnnn Lab</p>
-        <p className="mt-1 text-4xl">
+      <div className="pt-20 md:pt-32 px-8 md:px-14">
+        <p className="text-4xl md:text-6xl font-semibold">Fuuuun Lab</p>
+        <p className="mt-1 text-xl md:text-4xl">
           (actually it{"'"}s just test of my new skills.)
         </p>
       </div>
-      <div className="mt-20 px-20">
+      <div className="mt-10 md:mt-20 px-10 md:px-20">
         <div className="p-0.5">
-          <p className="text-5xl font-bold">List</p>
+          <p className="text-4xl md:text-5xl font-bold">List</p>
         </div>
-        <div className="flex flex-col space-y-2.5 mt-4">
+        <div className="flex flex-col space-y-2.5 mt-2 md:mt-4">
           <div className="p-1">
-            <li className="text-3xl">
+            <li className="text-2xl md:text-3xl">
               <Link href="/lab/react-query/" passHref>
                 <span className="underline cursor-pointer font-semibold">
                   react-query

@@ -30,18 +30,18 @@ const ReactQueryLabIndex: NextPage = () => {
   )
 
   return (
-    <div className="flex flex-col self-center max-w-5xl">
-      <div className="pt-24">
-        <p className="text-5xl">React-Query testsssssss</p>
+    <div className="flex flex-col self-center max-w-5xl px-2">
+      <div className="px-2 pt-24">
+        <p className="text-5xl font-semibold">React-Query testsssssss</p>
       </div>
-      <div className="mt-7 px-6 flex flex-col space-y-5">
+      <div className="mt-7 px-6 flex flex-col space-y-3 md:space-y-5">
         <div className="p-1 flex flex-col space-y-1.5">
           <p className="text-3xl font-semibold">
             The data fetched from React-Query
           </p>
-          <div className="pt-4 flex flex-col px-2 space-y-2.5">
+          <div className="pt-2 md:pt-4 flex flex-col px-2 space-y-2.5">
             <div className="flex-1">
-              <div className="px-4">
+              <div className="px-4 hidden md:block">
                 <SyntaxHighlighter
                   language="typescript"
                   style={a11yDark}
@@ -49,8 +49,14 @@ const ReactQueryLabIndex: NextPage = () => {
                 >
                   {`// Code
 const ReactQueryLabIndex: NextPage = () => {
-  const { isLoading, isError, data, error } = useQuery("datas", () =>
-    fetch("https://jsonplaceholder.typicode.com/todos/1").then((v) => v.json())
+  const { 
+    isLoading, 
+    isError, 
+    data, 
+    error 
+  } = useQuery("datas", () =>
+    fetch("https://jsonplaceholder.typicode.com/todos/1")
+    .then((v) => v.json())
   )
   // ...
   return (
@@ -65,8 +71,8 @@ const ReactQueryLabIndex: NextPage = () => {
           isLoading
             ? "Loading!"
             : isError
-            ? \`Something went wrong!\\n\${error}\`
-            : JSON.stringify(data)
+            ? \`Something went wrong!\n\${error}\`
+            : pd.json(JSON.stringify(data))
         }\`
       }
     </SyntaxHighlighter>
@@ -88,7 +94,7 @@ ${
     ? "Loading!"
     : isError
     ? `Something went wrong!\n${error}`
-    : JSON.stringify(data)
+    : pd.json(JSON.stringify(data))
 }`}
                 </SyntaxHighlighter>
               </div>
@@ -97,9 +103,9 @@ ${
         </div>
         <div className="p-1 flex flex-col space-y-1.5">
           <p className="text-3xl font-semibold">Infinity Query</p>
-          <div className="pt-4 flex flex-col px-2 space-y-2.5">
+          <div className="pt-2 md:pt-4 flex flex-col px-2 space-y-2.5">
             <div className="flex-1">
-              <div className="px-4">
+              <div className="px-4 hidden md:block">
                 <SyntaxHighlighter
                   language="typescript"
                   style={a11yDark}
@@ -138,8 +144,8 @@ const ReactQueryLabIndex: NextPage = () => {
           isLoading
             ? "Loading!"
             : isError
-            ? \`Something went wrong!\\n\${error}\`
-            : JSON.stringify(data)
+            ? \`Something went wrong!\n\${error}\`
+            : pd.json(JSON.stringify(data))
         }\`
       }
     </SyntaxHighlighter>
@@ -149,7 +155,7 @@ const ReactQueryLabIndex: NextPage = () => {
               </div>
             </div>
             <div className="flex-1 flex flex-col space-y-2">
-              <div className="px-2 flex flex-row space-x-3.5">
+              <div className="-mt-3 md:mt-0 px-2 flex flex-row space-x-3.5">
                 <div className="cursor-pointer" onClick={() => fetchNextPage()}>
                   <p className="text-xl font-semibold underline">Next</p>
                 </div>
