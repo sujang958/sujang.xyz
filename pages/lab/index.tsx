@@ -3,14 +3,14 @@ import Link from "next/link"
 
 const LabIndex: NextPage = () => {
   return (
-    <div className="flex flex-col max-w-5xl">
+    <div className="flex flex-col self-center max-w-5xl">
       <div className="pt-32 px-14">
         <p className="text-6xl font-semibold">Funnnn Lab</p>
         <p className="mt-1 text-4xl">
           (actually it{"'"}s just test of my new skills.)
         </p>
       </div>
-      <div className="mt-32 px-20">
+      <div className="mt-20 px-20">
         <div className="p-0.5">
           <p className="text-5xl font-bold">List</p>
         </div>

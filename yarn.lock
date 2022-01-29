@@ -297,6 +297,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/pretty-data@npm:^0.40.0":
+  version: 0.40.0
+  resolution: "@types/pretty-data@npm:0.40.0"
+  checksum: 3417084e31ac3a12a56458142947368abf49ee9c5f7720ca4cc5c0b7315833af5d23874828cd4a1b463adc86b853e7e642768e7a2dc9007a57275567c91e6024
+  languageName: node
+  linkType: hard
+
 "@types/prop-types@npm:*":
   version: 15.7.4
   resolution: "@types/prop-types@npm:15.7.4"
@@ -4078,6 +4085,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "popol@workspace:."
   dependencies:
+    "@types/pretty-data": ^0.40.0
     "@types/react": 17.0.15
     "@types/react-syntax-highlighter": ^13.5.2
     autoprefixer: ^10.4.2
@@ -4086,6 +4094,7 @@ __metadata:
     eslint-config-next: 11.0.1
     next: 11.0.1
     postcss: ^8.4.5
+    pretty-data: ^0.40.0
     react: 17.0.2
     react-dom: 17.0.2
     react-query: ^3.34.12
@@ -4186,6 +4195,13 @@ __metadata:
   version: 1.2.1
   resolution: "prelude-ls@npm:1.2.1"
   checksum: cd192ec0d0a8e4c6da3bb80e4f62afe336df3f76271ac6deb0e6a36187133b6073a19e9727a1ff108cd8b9982e4768850d413baa71214dd80c7979617dca827a
+  languageName: node
+  linkType: hard
+
+"pretty-data@npm:^0.40.0":
+  version: 0.40.0
+  resolution: "pretty-data@npm:0.40.0"
+  checksum: c3767b857c298c7637c44503af824fe5b6cd23b3fbbb7297ee3c48dde6aa6a7f168e0465b4d96f4a01e3428f8a27ff472e12ccf4bd09991f548cdbdc6aa6956e
   languageName: node
   linkType: hard
 
