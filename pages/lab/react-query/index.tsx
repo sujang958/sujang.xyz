@@ -30,7 +30,7 @@ const ReactQueryLabIndex: NextPage = () => {
   )
 
   return (
-    <div className="flex flex-col self-center max-w-5xl px-2">
+    <div className="flex flex-col self-center max-w-5xl w-full px-2">
       <div className="px-2 pt-24">
         <p className="text-5xl font-semibold">React-Query testsssssss</p>
       </div>
