@@ -20,7 +20,7 @@ const Layout: FC<ReactNode> = ({ children }) => {
         <meta name="keywords" content="React, Typescript, Portfolio" />
         <meta name="author" content="SeongHun Cho" />
         <meta property="og:title" content="SeongHun's Portfolio" />
-        <meta property="og:image" content="/img/og_image" />
+        <meta property="og:image" content="/img/og_image.png" />
       </Head>
       <QueryClientProvider client={queryClient}>
         <header className="fixed top-0 max-w-5xl w-full z-50">
