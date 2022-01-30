@@ -1,5 +1,6 @@
 import { FC, ReactNode, useEffect } from "react"
 import { QueryClient, QueryClientProvider } from "react-query"
+import Head from "next/head"
 import Header from "./header"
 
 const queryClient = new QueryClient()
@@ -13,6 +14,14 @@ const Layout: FC<ReactNode> = ({ children }) => {
 
   return (
     <div className="relative min-w-full font-outfit flex flex-col items-center">
+      <Head>
+        <title>Sujang958{"'"}s Portfolio</title>
+        <meta name="description" content="Sujang958's Portfolio!" />
+        <meta name="keywords" content="React, Typescript, Portfolio" />
+        <meta name="author" content="SeongHun Cho" />
+        <meta property="og:title" content="SeongHun's Portfolio" />
+        <meta property="og:image" content="/img/og_image" />
+      </Head>
       <QueryClientProvider client={queryClient}>
         <header className="fixed top-0 max-w-5xl w-full z-50">
           <Header />
