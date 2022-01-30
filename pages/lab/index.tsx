@@ -12,15 +12,13 @@ const LabIndex: NextPage = () => {
       </div>
       <div className="mt-10 md:mt-20 px-10 md:px-20">
         <div className="p-0.5">
-          <p className="text-4xl md:text-5xl font-bold">Liiist</p>
+          <p className="text-4xl md:text-5xl font-bold">List</p>
         </div>
         <div className="flex flex-col mt-2 md:mt-4">
           <div className="p-1">
             <li className="text-2xl md:text-3xl">
               <Link href="/lab/react-query/" passHref>
-                <span className="underline cursor-pointer font-semibold">
-                  react-query
-                </span>
+                <span className="underline cursor-pointer">react-query</span>
               </Link>
               &nbsp;&nbsp; - &nbsp; tests of&nbsp;
               <a
@@ -37,9 +35,7 @@ const LabIndex: NextPage = () => {
           <div className="p-1">
             <li className="text-2xl md:text-3xl">
               <Link href="/lab/cat/" passHref>
-                <span className="underline cursor-pointer font-semibold">
-                  cat
-                </span>
+                <span className="underline cursor-pointer">cat</span>
               </Link>
               &nbsp;&nbsp; - &nbsp; meow
             </li>
