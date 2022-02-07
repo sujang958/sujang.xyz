@@ -40,6 +40,14 @@ const LabIndex: NextPage = () => {
               &nbsp;&nbsp; - &nbsp; meow
             </li>
           </div>
+          <div className="p-1">
+            <li className="text-2xl md:text-3xl">
+              <Link href="/lab/apple/" passHref>
+                <span className="underline cursor-pointer">apple</span>
+              </Link>
+              &nbsp;&nbsp; - &nbsp; fineapple
+            </li>
+          </div>
         </div>
       </div>
     </div>
