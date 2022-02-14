@@ -112,6 +112,17 @@ const Home: FC = () => {
                 </a>{" "}
                 - Open-source Korea schools{"'"} meals website.
               </p>
+              <p className="text-xl md:text-2xl">
+                <a
+                  href="https://todo.sujang.xyz"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-semibold underline cursor-pointer"
+                >
+                  Tood
+                </a>{" "}
+                - A Simple To-do app.
+              </p>
             </div>
           </div>
           <div className="mt-8 md:mt-12">
