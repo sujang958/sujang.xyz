@@ -16,7 +16,7 @@ const GET_POST = gql`
 const PostItem: FC<{ id: string }> = ({ id }) => {
   const { data, loading } = useQuery(GET_POST, { variables: { id } })
   return (
-    <div className="flex w-5/6 transform-gpu cursor-pointer flex-col justify-between rounded-lg border border-slate-600 py-3 px-4 shadow transition duration-300 hover:scale-105 md:w-3/5">
+    <div className="flex w-5/6 transform-gpu cursor-pointer flex-col justify-between rounded-lg border border-slate-600 py-2 px-4 shadow transition duration-300 hover:scale-105 md:w-3/5">
       <div className="flex flex-col py-3">
         <p className="cursor-pointer text-xl text-blue-500 transition duration-200 hover:text-blue-400">
           &gt; {!loading && (data?.post.category ?? "Error!")}
