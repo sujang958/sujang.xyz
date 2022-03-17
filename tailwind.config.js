@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        outfit: ["Outfit", "sans-serif"],
+        ubuntu: ["Ubuntu", "sans-serif"],
       },
       colors: {
         "darkgray-chocolate": "#2b2b2b",

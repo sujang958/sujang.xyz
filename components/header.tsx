@@ -3,24 +3,24 @@ import Link from "next/link"
 
 const Header: FC = () => {
   return (
-    <div className="fixed top-0 left-0 right-0 flex flex-col justify-center items-center dark:bg-black dark:text-white w-full py-4 px-2">
-      <div className="flex flex-row justify-between items-center max-w-5xl w-full">
+    <div className="fixed top-0 left-0 right-0 flex w-full flex-col items-center justify-center py-4 px-2 dark:bg-black dark:text-white">
+      <div className="flex w-full max-w-5xl flex-row items-center justify-between">
         <div className="flex flex-row items-center">
-          <div className="cursor-pointer font-bold text-2xl">
+          <div className="cursor-pointer text-xl font-bold md:text-2xl">
             <Link href="/">Seonghun Cho</Link>
           </div>
         </div>
-        <div className="flex flex-row items-center space-x-2.5 justify-evenly">
-          <div className="cursor-pointer font-bold text-xl hover:underline">
-            <Link href="/">Github</Link>
+        <div className="flex flex-row items-center justify-evenly space-x-2.5">
+          <div className="cursor-pointer text-lg font-bold hover:underline md:text-xl">
+            <Link href="https://github.com/sujang958">Github</Link>
           </div>
-          <div className="cursor-pointer font-bold text-xl hover:underline">
-            <Link href="/">Blog</Link>
+          <div className="cursor-pointer text-lg font-bold hover:underline md:text-xl">
+            <Link href="/blog">Blog</Link>
           </div>
-          <div className="cursor-pointer font-bold text-xl hover:underline">
+          <div className="cursor-pointer text-lg font-bold hover:underline md:text-xl">
             <Link href="/">Lab</Link>
           </div>
-          <div className="cursor-pointer pl-2">
+          <div className="cursor-pointer pl-1 md:pl-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"

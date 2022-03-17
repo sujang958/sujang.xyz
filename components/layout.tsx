@@ -13,7 +13,7 @@ const Layout: FC<ReactNode> = ({ children }) => {
   }, [])
 
   return (
-    <div className="relative min-w-full font-outfit flex flex-col items-center">
+    <div className="relative flex min-h-screen min-w-full flex-col items-center font-ubuntu">
       <Head>
         <title>Sujang958{"'"}s Portfolio</title>
         <meta name="description" content="Sujang958's Portfolio!" />

@@ -9,19 +9,21 @@ export type Post = {
   title: string
   article: string
   date: string
+  category: string
 }
 
 const typeDefs = gql`
   type Query {
-    posts: [Post!]!
+    posts(category: String): [Post!]!
     post(_id: String!): Post
   }
 
   type Post {
-    _id: String
-    title: String
-    article: String
-    date: String
+    _id: String!
+    title: String!
+    article: String!
+    date: String!
+    category: String!
   }
 `
 
@@ -29,10 +31,12 @@ const client = new MongoClient(process.env.DB_URL || "")
 
 const resolvers: Resolvers = {
   Query: {
-    posts: async (_, __, { post }: { post: Collection<Post> }) => {
+    posts: async (_, { category }, { post }: { post: Collection<Post> }) => {
       const posts = await post.find().toArray()
       const transformed = posts.map((v) => ({ ...v, _id: v._id.toString() }))
-      return transformed
+      return category
+        ? transformed.filter((post) => post.category === category)
+        : transformed
     },
     post: async (_, { _id }, { post }: { post: Collection<Post> }) => {
       const posts = await post.find().toArray()
