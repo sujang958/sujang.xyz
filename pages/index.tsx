@@ -1,16 +1,17 @@
 import { FC, useState } from "react"
 import Link from "next/link"
+import Container from "../components/container"
 
 const Home: FC = () => {
   const [isHidden, setIsHidden] = useState(1)
 
   return (
-    <div className="max-w-5xl flex flex-col self-center">
-      <div className="w-full flex flex-col min-h-screen px-5">
-        <div className="flex-1 flex flex-col place-content-center gap-y-4">
-          <div className="text-3xl md:text-7xl">
-            <p>
-              Hello,{" "}
+    <Container>
+      <div className="flex flex-col max-w-5xl min-h-screen w-full self-center">
+        <div className="flex flex-col min-h-screen w-full justify-center px-4">
+          <div className="flex flex-col py-4">
+            <p className="text-3xl md:text-7xl">
+              Hello,&nbsp;
               <span
                 className="font-bold"
                 onClick={() => alert("Internationally, it's Cho Song Hun.")}
@@ -18,20 +19,16 @@ const Home: FC = () => {
                 I{"'"}m Seonghun Cho
               </span>
             </p>
-            <p>
+            <p className="text-3xl md:text-7xl">
               a.k.a <span className="font-bold">Sujang</span>
             </p>
           </div>
-          <div className="mt-0.5">
-            <div className="flex-1 flex-col">
-              <div className="flex-1">
-                <button className="bg-black text-white py-2 px-3 md:py-2.5 md:px-4 text-lg md:text-xl dark:bg-white dark:text-black transition duration-300">
-                  <Link href="#about" passHref>
-                    About me
-                  </Link>
-                </button>
-              </div>
-            </div>
+          <div className="py-4">
+            <button className="bg-black text-white py-2 px-3 md:py-2.5 md:px-4 text-lg md:text-xl dark:bg-white dark:text-black transition duration-300">
+              <Link href="#about" passHref>
+                About me
+              </Link>
+            </button>
           </div>
         </div>
       </div>
@@ -148,7 +145,7 @@ const Home: FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   )
 }
 

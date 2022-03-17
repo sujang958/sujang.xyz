@@ -23,12 +23,8 @@ const Layout: FC<ReactNode> = ({ children }) => {
         <meta property="og:image" content="/img/og_image.png" />
       </Head>
       <QueryClientProvider client={queryClient}>
-        <header className="fixed top-0 max-w-5xl w-full z-50">
-          <Header />
-        </header>
-        <div className="flex flex-col min-h-screen w-full dark:bg-black dark:text-white transition duration-300 overflow-auto z-10">
-          {children}
-        </div>
+        <Header />
+        {children}
       </QueryClientProvider>
     </div>
   )
