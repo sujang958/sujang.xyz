@@ -101,7 +101,7 @@ const PostPage: NextPage<{ post: Post | null }> = ({ post }) => {
               ),
             }}
             className="whitespace-pre-wrap break-words"
-            children={post.article}
+            children={post.article.replace(/\\n/gi, "\n")}
           />
         </div>
       </div>
