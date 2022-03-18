@@ -31,7 +31,9 @@ const PostItem: FC<{ id: string }> = ({ id }) => {
         </p>
       </div>
       <div className="ml-auto flex flex-row items-center py-1">
-        <p className="text-sm text-gray-300">2021-11-11 11:11:11</p>
+        <p className="text-sm text-gray-300">
+          {!loading && (new Date(data?.post.date).toString() ?? "Error!")}
+        </p>
       </div>
     </div>
   )

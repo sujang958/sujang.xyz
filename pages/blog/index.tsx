@@ -13,11 +13,9 @@ const GET_POSTS_ID = gql`
   }
 `
 
-const BlogIndex: NextPage = ({
-  posts,
-}: {
-  posts: Omit<Post, "title" | "article" | "category" | "date">[]
-}) => {
+const BlogIndex: NextPage<{
+  posts: Omit<Post, "title" | "article" | "date" | "category">[]
+}> = ({ posts }) => {
   return (
     <Container>
       <div className="flex min-h-screen w-full max-w-5xl flex-col self-center">
