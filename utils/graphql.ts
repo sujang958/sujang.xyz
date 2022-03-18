@@ -7,6 +7,11 @@ const client = new ApolloClient({
       : "https://sujang.xyz"
   }/api/graphql`,
   cache: new InMemoryCache(),
+  defaultOptions: {
+    query: {
+      fetchPolicy: "no-cache",
+    },
+  },
 })
 
 export default client
