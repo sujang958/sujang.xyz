@@ -20,7 +20,10 @@ const Header: FC = () => {
           <div className="cursor-pointer text-lg font-bold hover:underline md:text-xl">
             <Link href="/">Lab</Link>
           </div>
-          <div className="cursor-pointer pl-1 md:pl-2">
+          <div
+            className="cursor-pointer pl-1 md:pl-2"
+            onClick={() => document.body.classList.toggle("dark")}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"

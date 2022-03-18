@@ -1,5 +1,6 @@
 import { Resolvers } from "@apollo/client"
 import { ApolloServerPluginLandingPageDisabled } from "apollo-server-core"
+import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core/dist/plugin/landingPage/graphqlPlayground"
 import { ApolloServer, gql } from "apollo-server-micro"
 import { Collection, MongoClient } from "mongodb"
 import { NextApiRequest, NextApiResponse } from "next"
@@ -49,8 +50,11 @@ const resolvers: Resolvers = {
 const apolloServer = new ApolloServer({
   typeDefs,
   resolvers,
-  debug: false,
-  plugins: [ApolloServerPluginLandingPageDisabled()],
+  plugins: [
+    process.env.NODE_ENV !== "production"
+      ? ApolloServerPluginLandingPageGraphQLPlayground()
+      : ApolloServerPluginLandingPageDisabled(),
+  ],
   context: async () => ({
     post: (await client.connect()).db("blog").collection("posts"),
   }),

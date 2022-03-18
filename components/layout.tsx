@@ -10,6 +10,18 @@ const Layout: FC<ReactNode> = ({ children }) => {
     const dark = localStorage.getItem("theme")
     if (dark && dark === "dark") document.body.classList.add("dark")
     else document.body.classList.remove("dark")
+    const observer = new MutationObserver((mutations) => {
+      const classMutations = mutations.filter(
+        (v) => v.attributeName === "class"
+      )
+      const darkMutation = classMutations.find((v) =>
+        (v.target as HTMLElement).classList.contains("dark")
+      )
+      if (darkMutation) localStorage.setItem("theme", "dark")
+      else localStorage.setItem("theme", "light")
+    })
+    observer.observe(document.body, { attributes: true })
+    return () => observer.disconnect()
   }, [])
 
   return (
