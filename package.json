@@ -9,38 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@apollo/client": "^3.5.10",
-    "apollo-server-core": "^3.6.4",
-    "apollo-server-micro": "^3.6.4",
     "avvvatars-react": "^0.4.2",
-    "caniuse-lite": "^1.0.30001303",
-    "graphql": "^16.3.0",
-    "micro": "^9.3.4",
-    "moment": "^2.29.1",
-    "mongodb": "^4.4.1",
-    "next": "12.1.0",
-    "pretty-data": "^0.40.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-markdown": "^8.0.1",
-    "react-query": "^3.34.12",
-    "react-syntax-highlighter": "^15.4.5",
-    "remark-gfm": "^3.0.1"
+    "next": "^12.1.6",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.55",
     "@swc/core": "^1.2.157",
     "@types/node": "^17.0.21",
-    "@types/pretty-data": "^0.40.0",
-    "@types/react": "17.0.15",
-    "@types/react-syntax-highlighter": "^13.5.2",
-    "autoprefixer": "^10.4.2",
+    "@types/react": "^18.0.9",
+    "autoprefixer": "^10.4.7",
     "eslint": "7.31.0",
     "eslint-config-next": "11.0.1",
-    "postcss": "^8.4.5",
+    "postcss": "^8.4.14",
     "prettier": "^2.6.0",
     "prettier-plugin-tailwindcss": "^0.1.8",
-    "tailwindcss": "^3.0.15",
+    "tailwindcss": "^3.0.24",
     "typescript": "4.3.5"
   }
 }
