@@ -12,6 +12,7 @@
     "@apollo/client": "^3.5.10",
     "apollo-server-core": "^3.6.4",
     "apollo-server-micro": "^3.6.4",
+    "avvvatars-react": "^0.4.2",
     "caniuse-lite": "^1.0.30001303",
     "graphql": "^16.3.0",
     "micro": "^9.3.4",
