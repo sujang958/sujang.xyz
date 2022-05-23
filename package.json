@@ -15,13 +15,15 @@
     "graphql-request": "^4.2.0",
     "next": "^12.1.6",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "react-lottie": "^1.2.3"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.55",
     "@swc/core": "^1.2.157",
     "@types/node": "^17.0.21",
     "@types/react": "^18.0.9",
+    "@types/react-lottie": "^1.2.6",
     "autoprefixer": "^10.4.7",
     "eslint": "7.31.0",
     "eslint-config-next": "11.0.1",

@@ -2,12 +2,9 @@ import Avvvatars from "avvvatars-react"
 import { NextPage } from "next"
 import { request, gql } from "graphql-request"
 import { useEffect, useState, useTransition } from "react"
-
-export type Inboxes = {
-  from: string
-  time: string
-  article: string[]
-}
+import { Inbox } from "../typings/inbox"
+import MailItem from "../components/mailItem"
+import Lottie from "react-lottie"
 
 const INBOXES_QUERY = gql`
   {
@@ -21,16 +18,17 @@ const INBOXES_QUERY = gql`
 
 const IndexPage: NextPage = () => {
   const [isLoading, setLoading] = useState(false)
-  const [inboxes, setInboxes] = useState<Inboxes[]>([])
+  const [inboxes, setInboxes] = useState<Inbox[]>([])
   const getInboxes = async () => {
     const { inboxes } = await request("/api/graphql", INBOXES_QUERY)
     setInboxes(inboxes)
-    console.log(inboxes)
   }
   const loadAssets = async () => {
     setLoading(true)
     await Promise.all([getInboxes()])
-    setLoading(false)
+    setTimeout(() => {
+      setLoading(false)
+    }, 2000)
   }
   useEffect(() => {
     loadAssets()
@@ -57,41 +55,20 @@ const IndexPage: NextPage = () => {
           <p className="text-xl">Inbox</p>
         </div>
       </div>
-      <div className="flex w-1/3 flex-col items-start rounded-r-xl py-8 pr-2">
-        <div className="flex cursor-pointer flex-col py-3 pl-6">
-          <div className="flex w-full flex-row items-center space-x-3 py-1">
-            <Avvvatars size={50} value="Seonghun Cho" />
-            <div className="flex flex-col">
-              <p className="text-xl">Seonghun Cho</p>
-              <p className="text-base leading-tight">
-                {new Date().toISOString()}
-              </p>
-            </div>
+      <div className="flex w-3/4 flex-col items-start rounded-r-xl py-8 pr-2">
+        {isLoading ? (
+          <div className="self-center justify-self-center -mt-12">
+            <Lottie
+              options={{
+                autoplay: true,
+                animationData: require("../public/lotties/MailLoadingAnimation.json"),
+                loop: true,
+              }}
+            />
           </div>
-          <div className="flex flex-col py-1.5 px-1.5">
-            <p className="text-lg leading-tight text-gray-700">
-              hello there!, this is my introduce!. The concept is a mail
-              website.
-            </p>
-          </div>
-        </div>
-        <div className="flex cursor-pointer flex-col py-3 pl-6">
-          <div className="flex w-full flex-row items-center space-x-3 py-1">
-            <Avvvatars size={50} value="Seonghun Cho" />
-            <div className="flex flex-col">
-              <p className="text-xl">Seonghun Cho</p>
-              <p className="text-base leading-tight">
-                {new Date().toISOString()}
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col py-1.5 px-1.5">
-            <p className="text-lg leading-tight text-gray-700">
-              This is my contact. If you have some questions, then you can ask
-              me.
-            </p>
-          </div>
-        </div>
+        ) : (
+          inboxes.map((inbox, i) => <MailItem {...inbox} key={i} />)
+        )}
       </div>
     </>
   )
