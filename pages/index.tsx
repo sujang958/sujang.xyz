@@ -1,7 +1,41 @@
 import Avvvatars from "avvvatars-react"
 import { NextPage } from "next"
+import { request, gql } from "graphql-request"
+import { useEffect, useState, useTransition } from "react"
+
+export type Inboxes = {
+  from: string
+  time: string
+  article: string[]
+}
+
+const INBOXES_QUERY = gql`
+  {
+    inboxes {
+      time
+      from
+      article
+    }
+  }
+`
 
 const IndexPage: NextPage = () => {
+  const [isLoading, setLoading] = useState(false)
+  const [inboxes, setInboxes] = useState<Inboxes[]>([])
+  const getInboxes = async () => {
+    const { inboxes } = await request("/api/graphql", INBOXES_QUERY)
+    setInboxes(inboxes)
+    console.log(inboxes)
+  }
+  const loadAssets = async () => {
+    setLoading(true)
+    await Promise.all([getInboxes()])
+    setLoading(false)
+  }
+  useEffect(() => {
+    loadAssets()
+  }, [])
+
   return (
     <>
       <div className="flex w-1/4 flex-col items-start py-8">
