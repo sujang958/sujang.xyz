@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "ajv": "^8.11.0",
     "apollo-server-cloud-functions": "^3.7.0",
     "avvvatars-react": "^0.4.2",
+    "framer-motion": "^6.3.3",
     "graphql": "^16.5.0",
     "graphql-request": "^4.2.0",
     "next": "^12.1.6",
