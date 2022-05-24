@@ -6,7 +6,7 @@ const MailItem: FC<Inbox> = ({ article, from, time }) => {
   return (
     <div className="flex cursor-pointer flex-col py-3 pl-6">
       <div className="flex w-full flex-row items-center space-x-3 py-1">
-        <Avvvatars size={50} value={from} />
+        <Avvvatars size={48} value={from} />
         <div className="flex flex-col">
           <p className="text-xl">{from}</p>
           <p className="text-base leading-tight">{time}</p>

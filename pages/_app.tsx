@@ -1,13 +1,6 @@
 import "../styles/globals.css"
 import type { AppProps } from "next/app"
-import {
-  createContext,
-  Dispatch,
-  FC,
-  SetStateAction,
-  useReducer,
-  useState,
-} from "react"
+import { createContext, FC, useState } from "react"
 import Avvvatars from "avvvatars-react"
 import { AnimateSharedLayout } from "framer-motion"
 import SidebarItem from "../components/sidebarItem"
