@@ -8,7 +8,7 @@ const SidebarItem: FC<SidebarItemProps> = ({ title, icon, selected, href }) => {
   return (
     <div className="relative w-full">
       <div
-        className="flex w-full cursor-pointer flex-row items-center justify-center space-x-3 rounded-3xl py-3 sm:justify-start sm:py-3.5 sm:px-6 md:justify-start md:py-3.5 md:px-6"
+        className="flex w-full cursor-pointer flex-row items-center justify-center space-x-3 rounded-3xl py-2.5 sm:justify-start sm:py-3.5 sm:px-6 md:justify-start md:py-3.5 md:px-6"
         onClick={() => Router.push(href)}
       >
         {icon}
