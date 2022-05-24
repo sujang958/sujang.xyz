@@ -6,6 +6,7 @@ import MailItem from "../components/mailItem"
 import Lottie from "react-lottie"
 import { SelectedScreenContext } from "./_app"
 import { DispatchSelectedScreen } from "../typings/sidebar"
+import MailContainer from "../components/mailContainer"
 
 const INBOXES_QUERY = gql`
   {
@@ -30,7 +31,7 @@ const IndexPage: NextPage = () => {
     await Promise.all([getInboxes()])
     setTimeout(() => {
       setLoading(false)
-    }, 2000)
+    }, 1500)
   }
 
   useEffect(() => {
@@ -39,9 +40,10 @@ const IndexPage: NextPage = () => {
   }, [])
 
   return (
-    <div className="flex w-3/4 flex-col items-start rounded-r-xl py-8 pr-2">
+    <MailContainer>
+      <p className="hidden underline"></p>
       {isLoading ? (
-        <div className="-mt-12 self-center justify-self-center">
+        <div className="-mt-16 flex h-full w-full flex-col items-center justify-center">
           <Lottie
             options={{
               autoplay: true,
@@ -53,7 +55,7 @@ const IndexPage: NextPage = () => {
       ) : (
         inboxes.map((inbox, i) => <MailItem {...inbox} key={i} />)
       )}
-    </div>
+    </MailContainer>
   )
 }
 

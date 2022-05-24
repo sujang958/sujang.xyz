@@ -38,7 +38,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
       <main className="flex min-h-screen w-full max-w-7xl flex-row self-center pt-16">
         {/* @ts-ignore */}
         <AnimateSharedLayout>
-          <div className="flex w-1/4 flex-col items-start space-y-2 py-8 pl-3.5 pr-11">
+          <div className="flex w-1/6 flex-col items-start space-y-3 py-8 pl-3 pr-2 sm:w-[28%] md:w-[23%] md:pl-3.5 md:pr-3">
             <SidebarItem
               icon={
                 <svg

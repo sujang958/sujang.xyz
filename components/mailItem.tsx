@@ -15,11 +15,10 @@ const MailItem: FC<Inbox> = ({ article, from, time }) => {
       <div className="flex flex-col py-2 px-3">
         {article.map((message, i) => (
           <p
+            dangerouslySetInnerHTML={{ __html: message }}
             key={i}
             className="break-words text-lg leading-tight text-gray-700"
-          >
-            {message}
-          </p>
+          ></p>
         ))}
       </div>
     </div>

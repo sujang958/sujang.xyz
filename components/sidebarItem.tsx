@@ -6,12 +6,14 @@ import Router from "next/router"
 
 const SidebarItem: FC<SidebarItemProps> = ({ title, icon, selected, href }) => {
   return (
-    <div
-      className="relative flex w-full cursor-pointer flex-row items-center space-x-3 rounded-3xl py-3 px-6"
-      onClick={() => Router.push(href)}
-    >
-      {icon}
-      <p className="text-xl">{title}</p>
+    <div className="relative w-full">
+      <div
+        className="flex w-full cursor-pointer flex-row items-center justify-center space-x-3 rounded-3xl py-3 sm:justify-start sm:py-3.5 sm:px-6 md:justify-start md:py-3.5 md:px-6"
+        onClick={() => Router.push(href)}
+      >
+        {icon}
+        <p className="hidden text-xl sm:block md:block">{title}</p>
+      </div>
       {selected && (
         <motion.div
           layoutId="sidebarSelection"
