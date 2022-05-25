@@ -21,9 +21,21 @@ const Inboxes = [
   },
 ]
 
+const Projects = [
+  {
+    from: "Seonghun Cho",
+    time: new Date().toISOString(),
+    article: [
+      "Smeals - check you school's meals",
+      '<a class="underline" href="https://smeals.co" target="_blank">Web</a> &nbsp; <a class="underline" href="https://play.google.com/store/apps/details?id=co.smeals.app" target="_blank">Google Play</a> &nbsp;&nbsp; I\'m working to publish iOS App!',
+    ],
+  },
+]
+
 const resolvers = {
   Query: {
     inboxes: () => Inboxes,
+    projects: () => Projects,
   },
 }
 

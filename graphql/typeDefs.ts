@@ -2,10 +2,17 @@ import { gql } from "apollo-server-cloud-functions"
 
 const typeDefs = gql`
   type Query {
-    inboxes: [Inboxes]!
+    inboxes: [Inbox]!
+    projects: [Project]!
   }
 
-  type Inboxes {
+  type Inbox {
+    from: String!
+    time: String!
+    article: [String]!
+  }
+
+  type Project {
     from: String!
     time: String!
     article: [String]!
