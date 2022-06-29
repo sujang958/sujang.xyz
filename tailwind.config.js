@@ -14,10 +14,7 @@ module.exports = {
           "Noto Sans KR",
           "sans-serif",
         ],
-      },
-      colors: {
-        "darkgray-chocolate": "#2b2b2b",
-      },
+      }
     },
   },
   plugins: [],
