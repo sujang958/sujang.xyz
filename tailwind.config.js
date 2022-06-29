@@ -7,7 +7,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        ubuntu: ["Ubuntu", "sans-serif"],
+        pretendard: [
+          "Pretendard Variable",
+          "-apple-system",
+          "Apple SD Gothic Neo",
+          "Noto Sans KR",
+          "sans-serif",
+        ],
       },
       colors: {
         "darkgray-chocolate": "#2b2b2b",
