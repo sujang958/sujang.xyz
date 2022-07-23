@@ -4,7 +4,7 @@ import { FC } from "react"
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   return (
-    <div className="min-h-screen w-full font-pretendard">
+    <div className="min-h-screen w-full bg-[#111] font-pretendard text-white">
       <Component {...pageProps} />
     </div>
   )
