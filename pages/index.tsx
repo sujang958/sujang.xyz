@@ -1,11 +1,26 @@
 import gsap from "gsap"
+import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import { NextPage } from "next"
 import { useEffect, useId } from "react"
 import { motion } from "framer-motion"
 
+gsap.registerPlugin(ScrollTrigger)
+
 const MainPage: NextPage = () => {
   const mouseCircleId = useId()
+  const sec2TriggerId = useId()
 
+  useEffect(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: document.getElementById(sec2TriggerId),
+        start: "center bottom",
+        end: "center top",
+        scrub: true,
+      },
+    })
+    tl.to(document.getElementById("sec2"), { opacity: 1, x: 0, duration: 4 })
+  }, [sec2TriggerId])
   useEffect(() => {
     window.addEventListener("mousemove", (e) => {
       gsap.to(document.getElementById(mouseCircleId), {
@@ -65,7 +80,13 @@ const MainPage: NextPage = () => {
             </motion.div>
           </div>
         </div>
-        <div className="flex h-screen w-full max-w-7xl flex-col items-end justify-center self-center">
+        <div
+          className="relative flex h-screen w-full max-w-7xl translate-x-24 transform-gpu flex-col items-end justify-center self-center opacity-0"
+          id="sec2"
+        >
+          <div className="absoulte top-3/4 -z-10" id={sec2TriggerId}>
+            &nbsp;
+          </div>
           <p className="text-6xl font-bold">Skills I mainly use</p>
           <p className="text-4xl font-semibold">
             I love learning something new and cool
@@ -110,9 +131,6 @@ const MainPage: NextPage = () => {
                 <p className="py-1 text-sm">- Wikipedia, CC BY SA 3.0</p>
               </p>
             </div>
-          </div>
-          <div className="flex h-screen w-full max-w-7xl flex-col items-start justify-center self-center">
-            <p className="text-6xl font-bold">Projects</p>
           </div>
         </div>
       </div>
