@@ -3,6 +3,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import { NextPage } from "next"
 import { useEffect, useId } from "react"
 import { motion } from "framer-motion"
+import { Power0 } from "gsap/dist/gsap"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -10,6 +11,30 @@ const MainPage: NextPage = () => {
   const mouseCircleId = useId()
   const sec2TriggerId = useId()
 
+  useEffect(() => {
+    ;[1, 2, 3, 4, 5, 6].forEach((v) => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: document.getElementById(`sec3-title-trigger-${v}`),
+          start: "center bottom",
+          end: "center top",
+          scrub: true,
+        },
+      })
+      if (v != 6)
+        tl.to(document.getElementById(`sec3-title-${v}`), {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+        })
+      else
+        tl.to(document.getElementById("sec3-title"), {
+          opacity: 0,
+          y: 30,
+          duration: 1.2,
+        })
+    })
+  }, [])
   useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -73,7 +98,7 @@ const MainPage: NextPage = () => {
               }}
             >
               <p className="text-2xl font-medium">
-                Hi, I&apos;m Sujang958, but you can call me Sujang <br />
+                Hi, I&apos;m Sujang958 and you can call me Sujang <br />
                 I&apos;m a developer who loves frontend, backend, and UX.
               </p>
             </motion.div>
@@ -131,6 +156,64 @@ const MainPage: NextPage = () => {
             </div>
           </div>
         </div>
+        <div className="relative flex h-[500vh] max-w-7xl flex-col self-center">
+          <div className="absolute top-[3%]" id="sec3-title-trigger-1">
+            &nbsp;
+          </div>
+          <div className="absolute top-[20%]" id="sec3-title-trigger-2">
+            &nbsp;
+          </div>
+          <div className="absolute top-[40%]" id="sec3-title-trigger-3">
+            &nbsp;
+          </div>
+          <div className="absolute top-[60%]" id="sec3-title-trigger-4">
+            &nbsp;
+          </div>
+          <div className="absolute top-[80%]" id="sec3-title-trigger-5">
+            &nbsp;
+          </div>
+          <div className="absolute top-[100%]" id="sec3-title-trigger-6">
+            &nbsp;
+          </div>
+          <div className="sticky top-0 flex h-screen flex-col items-center justify-center">
+            <div
+              className="flex flex-row items-center justify-center space-x-6 text-8xl font-bold"
+              id="sec3-title"
+            >
+              <span
+                id="sec3-title-1"
+                className="translate-y-10 transform opacity-0"
+              >
+                Now
+              </span>
+              <span
+                id="sec3-title-2"
+                className="translate-y-10 transform opacity-0"
+              >
+                Here
+              </span>
+              <span
+                id="sec3-title-3"
+                className="translate-y-10 transform opacity-0"
+              >
+                are
+              </span>
+              <span
+                id="sec3-title-4"
+                className="translate-y-10 transform opacity-0"
+              >
+                My
+              </span>
+              <p
+                id="sec3-title-5"
+                className="translate-y-10 transform opacity-0"
+              >
+                Projects
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="h-screen"></div>
       </div>
       <div
         className="fixed top-1/2 left-1/2 z-50 -m-3 h-6 w-6 cursor-default rounded-full bg-white mix-blend-difference drop-shadow-xl filter"
