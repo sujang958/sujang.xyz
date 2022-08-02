@@ -18,7 +18,7 @@ const MainPage: NextPage = () => {
         end: "center top",
       },
     })
-    tl.to(document.getElementById("sec2"), { opacity: 1, x: 0, duration: 1.2 })
+    tl.to(document.getElementById("sec2"), { opacity: 1, x: 0, duration: 2 })
   }, [sec2TriggerId])
   useEffect(() => {
     window.addEventListener("mousemove", (e) => {
@@ -83,7 +83,7 @@ const MainPage: NextPage = () => {
           className="relative flex h-screen w-full max-w-7xl translate-x-24 transform-gpu flex-col items-end justify-center self-center opacity-0"
           id="sec2"
         >
-          <div className="absoulte top-4/5 -z-10" id={sec2TriggerId}>
+          <div className="absolute top-1/2 -z-10" id={sec2TriggerId}>
             &nbsp;
           </div>
           <p className="text-6xl font-bold">Skills I mainly use</p>
