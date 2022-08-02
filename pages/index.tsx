@@ -135,7 +135,7 @@ const MainPage: NextPage = () => {
         </div>
       </div>
       <div
-        className="fixed top-1/2 left-1/2 z-50 -m-3 h-6 w-6 rounded-full bg-white drop-shadow-xl filter"
+        className="fixed top-1/2 left-1/2 z-50 -m-3 h-6 w-6 cursor-default rounded-full bg-white mix-blend-difference drop-shadow-xl filter"
         id={mouseCircleId}
       >
         &nbsp;
