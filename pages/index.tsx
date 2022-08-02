@@ -3,7 +3,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import { NextPage } from "next"
 import { useEffect, useId } from "react"
 import { motion } from "framer-motion"
-import { Power0 } from "gsap/dist/gsap"
+import Image from "next/image"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -11,6 +11,20 @@ const MainPage: NextPage = () => {
   const mouseCircleId = useId()
   const sec2TriggerId = useId()
 
+  useEffect(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: document.getElementById("sec4-project1-image-trigger1"),
+        start: "center bottom",
+        end: "center top",
+        scrub: true,
+      },
+    })
+    tl.to(document.getElementById("sec4-project1-image1"), {
+      opacity: 0,
+      duration: 0.9,
+    })
+  }, [])
   useEffect(() => {
     ;[1, 2, 3, 4, 5, 6].forEach((v) => {
       const tl = gsap.timeline({
@@ -213,7 +227,64 @@ const MainPage: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className="h-screen"></div>
+        <div className="flex w-full max-w-7xl flex-col self-center py-8">
+          <div className="flex h-[300vh] w-full flex-row items-start">
+            <div className="relative flex w-1/2 flex-col px-20 py-2">
+              <div
+                className="sticky top-0 flex h-screen flex-col justify-center"
+                id="sec4-project1-text1"
+              >
+                <p className="text-5xl font-semibold">Smeals</p>
+                <div className="py-3"></div>
+                <p className="break-words text-2xl">
+                  Smeals is an iOS and Android app for Korean students. <br />
+                  Smeals allows you to know schools&apos; meals. <br />
+                  Visit{" "}
+                  <span
+                    className="cursor-pointer underline"
+                    onClick={() => open("https://smeals.co")}
+                  >
+                    this link
+                  </span>{" "}
+                  to download.
+                </p>
+                <div className="py-4"></div>
+                <p className="text-xl">Made with Flutter, Firebase.</p>
+              </div>
+              <div className="h-screen"></div>
+              <div className="h-screen"></div>
+            </div>
+            <div className="relative flex w-1/2 flex-col px-4 py-2">
+              <div className="sticky top-0 flex h-screen flex-col items-center justify-center">
+                <Image
+                  src={require("../public/imgs/project1-1.png")}
+                  alt="Project Image"
+                  width={720 * 0.6}
+                  height={1280 * 0.6}
+                  objectFit="contain"
+                  id="sec4-project1-image1"
+                />
+              </div>
+              <div className="relative h-screen">
+                <div
+                  className="absolute bottom-1/3"
+                  id="sec4-project1-image-trigger1"
+                >
+                  &nbsp;
+                </div>
+              </div>
+              <div className="sticky top-0 flex h-screen flex-col items-center justify-center">
+                <Image
+                  src={require("../public/imgs/project1-2.png")}
+                  alt="Project Image"
+                  width={720 * 0.6}
+                  height={1280 * 0.6}
+                  objectFit="contain"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div
         className="fixed top-1/2 left-1/2 z-50 -m-3 h-6 w-6 cursor-default rounded-full bg-white mix-blend-difference drop-shadow-xl filter"
