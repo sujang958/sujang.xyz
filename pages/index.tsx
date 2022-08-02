@@ -16,10 +16,9 @@ const MainPage: NextPage = () => {
         trigger: document.getElementById(sec2TriggerId),
         start: "center bottom",
         end: "center top",
-        scrub: true,
       },
     })
-    tl.to(document.getElementById("sec2"), { opacity: 1, x: 0, duration: 4 })
+    tl.to(document.getElementById("sec2"), { opacity: 1, x: 0, duration: 1.2 })
   }, [sec2TriggerId])
   useEffect(() => {
     window.addEventListener("mousemove", (e) => {
@@ -84,7 +83,7 @@ const MainPage: NextPage = () => {
           className="relative flex h-screen w-full max-w-7xl translate-x-24 transform-gpu flex-col items-end justify-center self-center opacity-0"
           id="sec2"
         >
-          <div className="absoulte top-3/4 -z-10" id={sec2TriggerId}>
+          <div className="absoulte top-4/5 -z-10" id={sec2TriggerId}>
             &nbsp;
           </div>
           <p className="text-6xl font-bold">Skills I mainly use</p>
@@ -92,7 +91,6 @@ const MainPage: NextPage = () => {
             I love learning something new and cool
           </p>
           <div className="flex flex-row items-center space-x-8 py-16">
-            {/* Todo: add view all skills */}
             <div className="flex h-64 w-72 transform-gpu flex-col rounded-lg bg-white py-4 px-5 text-[#111] transition duration-300 hover:-translate-y-4">
               <p className="text-2xl font-semibold">Next.js</p>
               <div className="py-1"></div>
