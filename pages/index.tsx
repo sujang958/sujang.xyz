@@ -84,8 +84,8 @@ const MainPage: NextPage = () => {
 
   return (
     <>
-      <div className="flex min-h-screen w-full flex-col px-24">
-        <div className="flex h-screen w-full max-w-7xl flex-row items-center justify-between self-center py-6">
+      <div className="flex min-h-screen w-full flex-col overflow-clip">
+        <div className="flex h-screen w-full max-w-7xl flex-row items-center justify-between self-center py-6 px-8 md:px-24">
           <div className="flex flex-col">
             <motion.div
               viewport={{ once: true }}
@@ -99,13 +99,13 @@ const MainPage: NextPage = () => {
                 easings: ["easeIn"],
               }}
             >
-              <p className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-7xl font-bold">
+              <p className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-5xl font-bold md:text-7xl">
                 <span className="text-transparent">Full-Stack</span> Developer,
               </p>
-              <p className="text-7xl font-bold">
+              <p className="text-5xl font-bold md:text-7xl">
                 <span className="line-through">UI</span>/UX Desginer
               </p>
-              <p className="text-5xl font-semibold">
+              <p className="text-3xl font-semibold md:text-5xl">
                 sujang958&apos;s portfolio
               </p>
             </motion.div>
@@ -123,7 +123,7 @@ const MainPage: NextPage = () => {
                 delay: 0.6,
               }}
             >
-              <p className="text-2xl font-medium">
+              <p className="text-lg font-medium md:text-2xl">
                 Hi, I&apos;m Sujang958 and you can call me Sujang <br />
                 I&apos;m a developer who loves frontend, backend, and UX.
               </p>
@@ -134,15 +134,19 @@ const MainPage: NextPage = () => {
           className="relative flex h-screen w-full max-w-7xl translate-x-24 transform-gpu flex-col items-end justify-center self-center opacity-0"
           id="sec2"
         >
-          <div className="absolute top-1/2 -z-10" id={sec2TriggerId}>
-            &nbsp;
+          <div className="px-8 md:px-24">
+            <div className="absolute top-1/2 -z-10" id={sec2TriggerId}>
+              &nbsp;
+            </div>
+            <p className="text-right text-4xl font-bold md:text-6xl">
+              Skills I mainly use
+            </p>
+            <p className="text-right text-lg font-semibold md:text-4xl">
+              I love learning something new and cool
+            </p>
           </div>
-          <p className="text-6xl font-bold">Skills I mainly use</p>
-          <p className="text-4xl font-semibold">
-            I love learning something new and cool
-          </p>
-          <div className="flex flex-row items-center space-x-8 py-16">
-            <div className="flex h-64 w-72 transform-gpu flex-col rounded-lg bg-white py-4 px-5 text-[#111] transition duration-300 hover:-translate-y-4">
+          <div className="flex w-full flex-row items-center space-x-8 overflow-x-auto overflow-y-hidden py-16 px-8 md:px-24">
+            <div className="flex h-64 w-96 transform-gpu flex-col rounded-lg bg-white py-4 px-5 text-[#111] transition duration-300 hover:-translate-y-4 md:w-72">
               <p className="text-2xl font-semibold">Next.js</p>
               <div className="py-1"></div>
               <p className="break-words text-lg leading-tight">
@@ -152,7 +156,7 @@ const MainPage: NextPage = () => {
                 <p className="py-1 text-sm">- Official introduction</p>
               </p>
             </div>
-            <div className="flex h-64 w-72 transform-gpu flex-col rounded-lg bg-white py-4 px-5 text-[#111] transition duration-300 hover:-translate-y-4">
+            <div className="flex h-64 w-96 transform-gpu flex-col rounded-lg bg-white py-4 px-5 text-[#111] transition duration-300 hover:-translate-y-4 md:w-72">
               <p className="text-2xl font-semibold">Flutter</p>
               <div className="py-1"></div>
               <p className="break-words text-lg leading-tight">
@@ -162,7 +166,7 @@ const MainPage: NextPage = () => {
                 <p className="py-1 text-sm">- Official introduction</p>
               </p>
             </div>
-            <div className="flex h-64 w-72 transform-gpu flex-col rounded-lg bg-white py-4 px-5 text-[#111] transition duration-300 hover:-translate-y-4">
+            <div className="flex h-64 w-96 transform-gpu flex-col rounded-lg bg-white py-4 px-5 text-[#111] transition duration-300 hover:-translate-y-4 md:w-72">
               <p className="text-2xl font-semibold">Nest.js</p>
               <div className="py-1"></div>
               <p className="break-words text-lg leading-tight">
@@ -171,7 +175,7 @@ const MainPage: NextPage = () => {
                 <p className="py-1 text-sm">- Official introduction</p>
               </p>
             </div>
-            <div className="flex h-64 w-72 transform-gpu flex-col rounded-lg bg-white py-4 px-5 text-[#111] transition duration-300 hover:-translate-y-4">
+            <div className="flex h-64 w-96 transform-gpu flex-col rounded-lg bg-white py-4 px-5 text-[#111] transition duration-300 hover:-translate-y-4 md:w-72">
               <p className="text-2xl font-semibold">MongoDB</p>
               <div className="py-1"></div>
               <p className="break-words text-lg leading-tight">
@@ -182,7 +186,7 @@ const MainPage: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className="relative flex h-[500vh] max-w-7xl flex-col self-center">
+        <div className="relative flex h-[500vh] max-w-7xl flex-col self-center px-8 md:px-24">
           <div className="absolute top-[3%]" id="sec3-title-trigger-1">
             &nbsp;
           </div>
@@ -200,7 +204,7 @@ const MainPage: NextPage = () => {
           </div>
           <div className="sticky top-0 flex h-screen flex-col items-center justify-center">
             <div
-              className="flex flex-row items-center justify-center space-x-6 text-8xl font-bold"
+              className="flex flex-row flex-wrap items-center justify-center space-x-2 text-7xl space-y-4 font-bold md:space-x-6 md:text-8xl"
               id="sec3-title"
             >
               <span
@@ -230,8 +234,8 @@ const MainPage: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className="flex w-full max-w-7xl flex-col self-center py-8">
-          <div className="flex h-[300vh] w-full flex-row items-start">
+        <div className="flex w-full max-w-7xl flex-col self-center py-8 px-8 md:px-24">
+          <div className="flex hidden h-[300vh] w-full flex-row items-start md:block">
             <div className="relative flex w-1/2 flex-col px-20 py-2">
               <div
                 className="sticky top-0 flex h-screen flex-col justify-center"
@@ -298,7 +302,7 @@ const MainPage: NextPage = () => {
         </div>
       </div>
       <div
-        className="pointer-events-none fixed top-1/2 left-1/2 z-50 -m-3 h-6 w-6 cursor-default rounded-full bg-white mix-blend-difference drop-shadow-xl filter"
+        className="pointer-events-none fixed top-1/2 left-1/2 z-50 -m-3 hidden h-6 w-6 cursor-default rounded-full bg-white mix-blend-difference drop-shadow-xl filter md:block"
         id={mouseCircleId}
       >
         &nbsp;
