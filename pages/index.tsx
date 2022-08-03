@@ -12,7 +12,7 @@ const MainPage: NextPage = () => {
   const sec2TriggerId = useId()
 
   useEffect(() => {
-    const tl = gsap.timeline({
+    const img1Tl = gsap.timeline({
       scrollTrigger: {
         trigger: document.getElementById("sec4-project1-image-trigger1"),
         start: "center bottom",
@@ -20,13 +20,25 @@ const MainPage: NextPage = () => {
         scrub: true,
       },
     })
-    tl.to(document.getElementById("sec4-project1-image1"), {
+    img1Tl.to(document.getElementById("sec4-project1-image1"), {
       opacity: 0,
+      duration: 0.9,
+    })
+    const img2Tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: document.getElementById("sec4-project1-image-trigger2"),
+        start: "center bottom",
+        end: "center top",
+        scrub: true,
+      },
+    })
+    img2Tl.to(document.getElementById("sec4-project1-image2"), {
+      opacity: 1,
       duration: 0.9,
     })
   }, [])
   useEffect(() => {
-    ;[1, 2, 3, 4, 5, 6].forEach((v) => {
+    ;[1, 2, 3, 4, 5, 5].forEach((v) => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: document.getElementById(`sec3-title-trigger-${v}`),
@@ -35,7 +47,7 @@ const MainPage: NextPage = () => {
           scrub: true,
         },
       })
-      if (v != 6)
+      if (v != 5)
         tl.to(document.getElementById(`sec3-title-${v}`), {
           y: 0,
           opacity: 1,
@@ -186,9 +198,6 @@ const MainPage: NextPage = () => {
           <div className="absolute top-[80%]" id="sec3-title-trigger-5">
             &nbsp;
           </div>
-          <div className="absolute top-[100%]" id="sec3-title-trigger-6">
-            &nbsp;
-          </div>
           <div className="sticky top-0 flex h-screen flex-col items-center justify-center">
             <div
               className="flex flex-row items-center justify-center space-x-6 text-8xl font-bold"
@@ -204,26 +213,20 @@ const MainPage: NextPage = () => {
                 id="sec3-title-2"
                 className="translate-y-10 transform opacity-0"
               >
-                Here
+                Introduce
               </span>
               <span
                 id="sec3-title-3"
                 className="translate-y-10 transform opacity-0"
               >
-                are
+                My
               </span>
               <span
                 id="sec3-title-4"
                 className="translate-y-10 transform opacity-0"
               >
-                My
-              </span>
-              <p
-                id="sec3-title-5"
-                className="translate-y-10 transform opacity-0"
-              >
                 Projects
-              </p>
+              </span>
             </div>
           </div>
         </div>
@@ -234,9 +237,9 @@ const MainPage: NextPage = () => {
                 className="sticky top-0 flex h-screen flex-col justify-center"
                 id="sec4-project1-text1"
               >
-                <p className="text-5xl font-semibold">Smeals</p>
+                <p className="text-5xl font-bold">Smeals</p>
                 <div className="py-3"></div>
-                <p className="break-words text-2xl">
+                <p className="break-words text-2xl font-semibold">
                   Smeals is an iOS and Android app for Korean students. <br />
                   Smeals allows you to know schools&apos; meals. <br />
                   Visit{" "}
@@ -272,6 +275,12 @@ const MainPage: NextPage = () => {
                 >
                   &nbsp;
                 </div>
+                <div
+                  className="absolute -bottom-1/2"
+                  id="sec4-project1-image-trigger2"
+                >
+                  &nbsp;
+                </div>
               </div>
               <div className="sticky top-0 flex h-screen flex-col items-center justify-center">
                 <Image
@@ -280,6 +289,8 @@ const MainPage: NextPage = () => {
                   width={720 * 0.6}
                   height={1280 * 0.6}
                   objectFit="contain"
+                  id="sec4-project1-image2"
+                  className="opacity-0"
                 />
               </div>
             </div>
@@ -287,7 +298,7 @@ const MainPage: NextPage = () => {
         </div>
       </div>
       <div
-        className="fixed top-1/2 left-1/2 z-50 -m-3 h-6 w-6 cursor-default rounded-full bg-white mix-blend-difference drop-shadow-xl filter"
+        className="pointer-events-none fixed top-1/2 left-1/2 z-50 -m-3 h-6 w-6 cursor-default rounded-full bg-white mix-blend-difference drop-shadow-xl filter"
         id={mouseCircleId}
       >
         &nbsp;
