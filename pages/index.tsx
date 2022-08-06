@@ -1,9 +1,13 @@
 import gsap from "gsap"
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import { NextPage } from "next"
-import { useEffect, useId } from "react"
+import { useEffect, useId, useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
+
+import IMG_PROJECT1_1 from "../public/imgs/project1-1.png"
+import IMG_PROJECT1_2 from "../public/imgs/project1-2.png"
+import Lottie from "lottie-react"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -11,32 +15,14 @@ const MainPage: NextPage = () => {
   const mouseCircleId = useId()
   const sec2TriggerId = useId()
 
+  const [windowNull, setWindowNull] = useState<
+    null | (Window & typeof globalThis)
+  >(null)
+
   useEffect(() => {
-    const img1Tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: document.getElementById("sec4-project1-image-trigger1"),
-        start: "center bottom",
-        end: "center top",
-        scrub: true,
-      },
-    })
-    img1Tl.to(document.getElementById("sec4-project1-image1"), {
-      opacity: 0,
-      duration: 0.9,
-    })
-    const img2Tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: document.getElementById("sec4-project1-image-trigger2"),
-        start: "center bottom",
-        end: "center top",
-        scrub: true,
-      },
-    })
-    img2Tl.to(document.getElementById("sec4-project1-image2"), {
-      opacity: 1,
-      duration: 0.9,
-    })
+    setWindowNull(window ?? null)
   }, [])
+
   useEffect(() => {
     ;[1, 2, 3, 4, 5, 5].forEach((v) => {
       const tl = gsap.timeline({
@@ -56,11 +42,10 @@ const MainPage: NextPage = () => {
       else
         tl.to(document.getElementById("sec3-title"), {
           opacity: 0,
-          y: 30,
-          duration: 1.2,
+          duration: 1.0,
         })
     })
-  }, [])
+  }, [windowNull])
   useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -69,18 +54,31 @@ const MainPage: NextPage = () => {
         end: "center top",
       },
     })
-    tl.to(document.getElementById("sec2"), { opacity: 1, x: 0, duration: 2 })
-  }, [sec2TriggerId])
+    tl.to(document.getElementById("sec2"), { opacity: 1, x: 0, duration: 1.5 })
+  }, [sec2TriggerId, windowNull])
   useEffect(() => {
-    window.addEventListener("mousemove", (e) => {
+    const moveCircleOnMouse = (x: number, y: number) => {
       gsap.to(document.getElementById(mouseCircleId), {
-        left: e.clientX,
-        top: e.clientY,
+        left: x,
+        top: y,
         duration: 0.3,
         ease: "sine.out",
       })
+    }
+    window.addEventListener("mousemove", (e) => {
+      moveCircleOnMouse(e.clientX, e.clientY)
     })
   }, [mouseCircleId])
+
+  if (windowNull === null)
+    return (
+      <div className="flex h-screen w-full flex-col items-center justify-center bg-white">
+        <Lottie
+          animationData={require("../public/lotties/activityIndicator.json")}
+          loop={true}
+        />
+      </div>
+    )
 
   return (
     <>
@@ -135,7 +133,10 @@ const MainPage: NextPage = () => {
           id="sec2"
         >
           <div className="px-8 md:px-24">
-            <div className="absolute top-1/2 -z-10" id={sec2TriggerId}>
+            <div
+              className="absolute top-1/3 -z-10 md:top-1/2"
+              id={sec2TriggerId}
+            >
               &nbsp;
             </div>
             <p className="text-right text-4xl font-bold md:text-6xl">
@@ -204,7 +205,7 @@ const MainPage: NextPage = () => {
           </div>
           <div className="sticky top-0 flex h-screen flex-col items-center justify-center">
             <div
-              className="flex flex-row flex-wrap items-center justify-center space-x-2 text-7xl space-y-4 font-bold md:space-x-6 md:text-8xl"
+              className="flex flex-row flex-wrap items-center justify-center space-x-2 space-y-4 text-7xl font-bold md:space-x-6 md:text-8xl"
               id="sec3-title"
             >
               <span
@@ -235,15 +236,28 @@ const MainPage: NextPage = () => {
           </div>
         </div>
         <div className="flex w-full max-w-7xl flex-col self-center py-8 px-8 md:px-24">
-          <div className="flex hidden h-[300vh] w-full flex-row items-start md:block">
-            <div className="relative flex w-1/2 flex-col px-20 py-2">
-              <div
-                className="sticky top-0 flex h-screen flex-col justify-center"
-                id="sec4-project1-text1"
-              >
-                <p className="text-5xl font-bold">Smeals</p>
-                <div className="py-3"></div>
-                <p className="break-words text-2xl font-semibold">
+          <div className="relative flex w-full flex-col items-center">
+            <div className="sticky top-24 flex h-[50vh] w-full flex-col items-center justify-center">
+              <Image
+                src={IMG_PROJECT1_1}
+                alt="Project Image"
+                objectFit="contain"
+              />
+            </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 1 }}
+              viewport={{
+                margin: "-40%",
+              }}
+              whileInView={{
+                opacity: 1,
+              }}
+              className="sticky top-0 z-10 flex min-h-[50vh] w-full max-w-sm flex-col justify-between rounded-xl bg-black py-5 px-6"
+            >
+              <div>
+                <p className="text-3xl font-bold">Smeals</p>
+                <div className="py-2"></div>
+                <p className="break-words text-xl font-semibold">
                   Smeals is an iOS and Android app for Korean students. <br />
                   Smeals allows you to know schools&apos; meals. <br />
                   Visit{" "}
@@ -255,49 +269,11 @@ const MainPage: NextPage = () => {
                   </span>{" "}
                   to download.
                 </p>
-                <div className="py-4"></div>
-                <p className="text-xl">Made with Flutter, Firebase.</p>
               </div>
-              <div className="h-screen"></div>
-              <div className="h-screen"></div>
-            </div>
-            <div className="relative flex w-1/2 flex-col px-4 py-2">
-              <div className="sticky top-0 flex h-screen flex-col items-center justify-center">
-                <Image
-                  src={require("../public/imgs/project1-1.png")}
-                  alt="Project Image"
-                  width={720 * 0.6}
-                  height={1280 * 0.6}
-                  objectFit="contain"
-                  id="sec4-project1-image1"
-                />
+              <div className="py-3">
+                <p className="text-lg">- Made with Flutter, Firebase</p>
               </div>
-              <div className="relative h-screen">
-                <div
-                  className="absolute bottom-1/3"
-                  id="sec4-project1-image-trigger1"
-                >
-                  &nbsp;
-                </div>
-                <div
-                  className="absolute -bottom-1/2"
-                  id="sec4-project1-image-trigger2"
-                >
-                  &nbsp;
-                </div>
-              </div>
-              <div className="sticky top-0 flex h-screen flex-col items-center justify-center">
-                <Image
-                  src={require("../public/imgs/project1-2.png")}
-                  alt="Project Image"
-                  width={720 * 0.6}
-                  height={1280 * 0.6}
-                  objectFit="contain"
-                  id="sec4-project1-image2"
-                  className="opacity-0"
-                />
-              </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
