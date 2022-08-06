@@ -56,8 +56,7 @@ const MainPage: NextPage = () => {
       else
         tl.to(document.getElementById("sec3-title"), {
           opacity: 0,
-          y: 30,
-          duration: 1.2,
+          duration: 1.0,
         })
     })
   }, [])
@@ -69,16 +68,19 @@ const MainPage: NextPage = () => {
         end: "center top",
       },
     })
-    tl.to(document.getElementById("sec2"), { opacity: 1, x: 0, duration: 2 })
+    tl.to(document.getElementById("sec2"), { opacity: 1, x: 0, duration: 1.5 })
   }, [sec2TriggerId])
   useEffect(() => {
-    window.addEventListener("mousemove", (e) => {
+    const moveCircleOnMouse = (x: number, y: number) => {
       gsap.to(document.getElementById(mouseCircleId), {
-        left: e.clientX,
-        top: e.clientY,
+        left: x,
+        top: y,
         duration: 0.3,
         ease: "sine.out",
       })
+    }
+    window.addEventListener("mousemove", (e) => {
+      moveCircleOnMouse(e.clientX, e.clientY)
     })
   }, [mouseCircleId])
 
@@ -135,7 +137,7 @@ const MainPage: NextPage = () => {
           id="sec2"
         >
           <div className="px-8 md:px-24">
-            <div className="absolute top-1/2 -z-10" id={sec2TriggerId}>
+            <div className="absolute top-1/3 md:top-1/2 -z-10" id={sec2TriggerId}>
               &nbsp;
             </div>
             <p className="text-right text-4xl font-bold md:text-6xl">
