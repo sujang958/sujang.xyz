@@ -229,7 +229,7 @@ const MainPage: NextPage = () => {
           </div>
         </div>
         <div className="flex w-full max-w-7xl flex-col self-center py-8 px-8 md:px-24">
-          <div className="relative flex w-full flex-col">
+          <div className="relative flex w-full flex-col items-center">
             <div className="sticky top-24 flex h-[50vh] w-full flex-col items-center justify-center">
               <Image
                 src={IMG_PROJECT1_1}
@@ -245,7 +245,7 @@ const MainPage: NextPage = () => {
               whileInView={{
                 opacity: 1,
               }}
-              className="sticky top-0 z-10 flex min-h-[50vh] w-full flex-col justify-between rounded-xl bg-black py-5 px-6"
+              className="sticky top-0 z-10 flex min-h-[50vh] w-full max-w-sm flex-col justify-between rounded-xl bg-black py-5 px-6"
             >
               <div>
                 {/* todo: 이걸로 통일 */}
