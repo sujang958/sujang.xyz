@@ -7,6 +7,7 @@ import Image from "next/image"
 
 import IMG_PROJECT1_1 from "../public/imgs/project1-1.png"
 import IMG_PROJECT1_2 from "../public/imgs/project1-2.png"
+import Lottie from "lottie-react"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -69,7 +70,15 @@ const MainPage: NextPage = () => {
     })
   }, [mouseCircleId])
 
-  if (windowNull === null) return <></>
+  if (windowNull === null)
+    return (
+      <div className="flex h-screen w-full flex-col items-center justify-center bg-white">
+        <Lottie
+          animationData={require("../public/lotties/activityIndicator.json")}
+          loop={true}
+        />
+      </div>
+    )
 
   return (
     <>
