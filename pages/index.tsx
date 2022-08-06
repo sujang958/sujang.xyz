@@ -18,8 +18,6 @@ const MainPage: NextPage = () => {
     null | (Window & typeof globalThis)
   >(null)
 
-  //const isLoaded = (): boolean => (windowNull ? true : false)
-
   useEffect(() => {
     setWindowNull(window ?? null)
   }, [])
@@ -248,7 +246,6 @@ const MainPage: NextPage = () => {
               className="sticky top-0 z-10 flex min-h-[50vh] w-full max-w-sm flex-col justify-between rounded-xl bg-black py-5 px-6"
             >
               <div>
-                {/* todo: 이걸로 통일 */}
                 <p className="text-3xl font-bold">Smeals</p>
                 <div className="py-2"></div>
                 <p className="break-words text-xl font-semibold">
