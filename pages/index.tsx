@@ -70,7 +70,7 @@ const MainPage: NextPage = () => {
     <>
       <div className="flex min-h-screen w-full flex-col overflow-clip">
         <div className="flex h-screen w-full max-w-7xl flex-row items-center justify-between self-center py-6 px-8 md:px-24">
-          <div className="flex flex-col">
+          <div className="-mt-24 flex flex-col md:mt-0">
             <motion.div
               viewport={{ once: true }}
               initial={{
