@@ -68,6 +68,11 @@ const MainPage: NextPage = () => {
     window.addEventListener("mousemove", (e) => {
       moveCircleOnMouse(e.clientX, e.clientY)
     })
+    const appearMouseCircle = () => {
+      gsap.to(document.getElementById(mouseCircleId), { opacity: 1 })
+      window.removeEventListener("mousemove", appearMouseCircle)
+    }
+    window.addEventListener("mousemove", appearMouseCircle)
   }, [mouseCircleId])
 
   if (windowNull === null)
@@ -278,7 +283,7 @@ const MainPage: NextPage = () => {
         </div>
       </div>
       <div
-        className="pointer-events-none fixed top-1/2 left-1/2 z-50 -m-3 hidden h-6 w-6 cursor-default rounded-full bg-white mix-blend-difference drop-shadow-xl filter md:block"
+        className="pointer-events-none fixed top-1/2 left-1/2 z-50 -m-3 hidden h-6 w-6 cursor-default rounded-full bg-white opacity-0 mix-blend-difference drop-shadow-xl filter md:block"
         id={mouseCircleId}
       >
         &nbsp;
