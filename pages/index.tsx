@@ -228,6 +228,8 @@ const MainPage: NextPage = () => {
                 src={IMG_PROJECT1_1}
                 alt="Project Image"
                 objectFit="contain"
+                width={720}
+                height={1280}
               />
             </div>
             <motion.div
