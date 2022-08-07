@@ -1,6 +1,6 @@
 import gsap from "gsap"
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
-import { NextPage } from "next"
+import { GetServerSideProps, NextPage } from "next"
 import { useEffect, useId } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
@@ -274,3 +274,14 @@ const MainPage: NextPage = () => {
 }
 
 export default MainPage
+
+export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  )
+
+  return {
+    props: {},
+  }
+}
