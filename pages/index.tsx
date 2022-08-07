@@ -1,27 +1,18 @@
 import gsap from "gsap"
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import { NextPage } from "next"
-import { useEffect, useId, useState } from "react"
+import { useEffect, useId } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 
 import IMG_PROJECT1_1 from "../public/imgs/project1-1.png"
 import IMG_PROJECT1_2 from "../public/imgs/project1-2.png"
-import Lottie from "lottie-react"
 
 gsap.registerPlugin(ScrollTrigger)
 
 const MainPage: NextPage = () => {
   const mouseCircleId = useId()
   const sec2TriggerId = useId()
-
-  const [windowNull, setWindowNull] = useState<
-    null | (Window & typeof globalThis)
-  >(null)
-
-  useEffect(() => {
-    setWindowNull(window ?? null)
-  }, [])
 
   useEffect(() => {
     ;[1, 2, 3, 4, 5, 5].forEach((v) => {
@@ -45,7 +36,7 @@ const MainPage: NextPage = () => {
           duration: 1.0,
         })
     })
-  }, [windowNull])
+  }, [])
   useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -55,7 +46,7 @@ const MainPage: NextPage = () => {
       },
     })
     tl.to(document.getElementById("sec2"), { opacity: 1, x: 0, duration: 1.5 })
-  }, [sec2TriggerId, windowNull])
+  }, [sec2TriggerId])
   useEffect(() => {
     const moveCircleOnMouse = (x: number, y: number) => {
       gsap.to(document.getElementById(mouseCircleId), {
@@ -74,16 +65,6 @@ const MainPage: NextPage = () => {
     }
     window.addEventListener("mousemove", appearMouseCircle)
   }, [mouseCircleId])
-
-  if (windowNull === null)
-    return (
-      <div className="flex h-screen w-full flex-col items-center justify-center bg-white">
-        <Lottie
-          animationData={require("../public/lotties/activityIndicator.json")}
-          loop={true}
-        />
-      </div>
-    )
 
   return (
     <>

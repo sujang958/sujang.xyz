@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "avvvatars-react": "^0.4.2",
+    "flubber": "^0.4.2",
     "framer-motion": "^6.3.16",
     "gsap": "^3.10.4",
     "lottie-react": "^2.3.1",
