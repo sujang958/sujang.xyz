@@ -3,10 +3,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import { GetServerSideProps, NextPage } from "next"
 import { useEffect, useId } from "react"
 import { motion } from "framer-motion"
-import Image from "next/image"
 
-import IMG_PROJECT1_1 from "../public/imgs/project1-1.png"
-import IMG_PROJECT1_2 from "../public/imgs/project1-2.png"
 import Sec2 from "../components/index/sec2"
 import Sec3 from "../components/index/sec3"
 import Sec4 from "../components/index/sec4"
@@ -15,41 +12,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const MainPage: NextPage = () => {
   const mouseCircleId = useId()
-  const sec2TriggerId = useId()
 
-  useEffect(() => {
-    ;[1, 2, 3, 4, 5, 5].forEach((v) => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: document.getElementById(`sec3-title-trigger-${v}`),
-          start: "center bottom",
-          end: "center top",
-          scrub: true,
-        },
-      })
-      if (v != 5)
-        tl.to(document.getElementById(`sec3-title-${v}`), {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-        })
-      else
-        tl.to(document.getElementById("sec3-title"), {
-          opacity: 0,
-          duration: 1.0,
-        })
-    })
-  }, [])
-  useEffect(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: document.getElementById(sec2TriggerId),
-        start: "center bottom",
-        end: "center top",
-      },
-    })
-    tl.to(document.getElementById("sec2"), { opacity: 1, x: 0, duration: 1.5 })
-  }, [sec2TriggerId])
   useEffect(() => {
     const moveCircleOnMouse = (x: number, y: number) => {
       gsap.to(document.getElementById(mouseCircleId), {

@@ -2,7 +2,7 @@ import { NextPage } from "next"
 import { motion } from "framer-motion"
 import Image from "next/image"
 
-import IMG_PROJECT1_1 from "../public/imgs/project1-1.png"
+import IMG_PROJECT1_1 from "../../public/imgs/project1-1.png"
 
 const Sec4: NextPage = () => {
   return (
