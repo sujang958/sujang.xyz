@@ -24,8 +24,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
     )
 
   return (
-    <div className="min-h-screen w-full bg-[#111] font-pretendard text-white">
-      <Header />
+    <div className="min-h-screen w-full bg-black font-pretendard text-white">
       <Component {...pageProps} />
     </div>
   )

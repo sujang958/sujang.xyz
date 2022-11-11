@@ -3,9 +3,21 @@
 	font-weight: 45 920;
 	font-style: normal;
 	font-display: swap;
-	src: local('Pretendard Variable'), url('../public/PretendardVariable.woff2') format('woff2-variations');
+	src: local('Pretendard Variable'), url('../public/fonts/PretendardVariable.woff2') format('woff2-variations');
+}
+
+@font-face {
+	font-family: 'Helvetica';
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+	src: url('../public/fonts/Helvetica\ Black.ttf');
 }
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.text-stroke {
+	-webkit-text-stroke: 2px #fff;
+}
