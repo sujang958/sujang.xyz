@@ -207,6 +207,7 @@ const MainPage: NextPage = () => {
               className="z-50 mt-4 block cursor-pointer text-5xl hover:underline"
               href="https://github.com/sujang958"
               target={"_blank"}
+              rel="noreferrer"
             >
               &gt; Github
             </a>
