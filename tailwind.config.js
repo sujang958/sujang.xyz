@@ -17,7 +17,7 @@ module.exports = {
         helvetica: ["Helvetica", "sans-serif"],
       },
       colors: {
-        "like-black": "#111",
+        "pseudo-black": "#070707",
       },
     },
   },

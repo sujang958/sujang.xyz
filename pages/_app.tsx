@@ -23,8 +23,9 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
     )
 
   return (
-    <div className="min-h-screen w-full bg-black font-pretendard text-white">
+    <div className="min-h-screen w-full bg-pseudo-black font-pretendard text-white">
       <Component {...pageProps} />
+      <p className="text-base">Copyrights Sujang, all rights reserved</p>
     </div>
   )
 }

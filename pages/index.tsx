@@ -3,14 +3,17 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import { GetServerSideProps, NextPage } from "next"
 import { useEffect, useId } from "react"
 
-gsap.registerPlugin(ScrollTrigger)
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 const MainPage: NextPage = () => {
   const mouseCircleId = useId()
 
   useEffect(() => {
+    const mouseCircle = document.getElementById(mouseCircleId)
     const moveCircleOnMouse = (x: number, y: number) => {
-      gsap.to(document.getElementById(mouseCircleId), {
+      gsap.to(mouseCircle, {
         left: x,
         top: y,
         duration: 0.3,
@@ -20,156 +23,198 @@ const MainPage: NextPage = () => {
     window.addEventListener("mousemove", (e) => {
       moveCircleOnMouse(e.clientX, e.clientY)
     })
-    const appearMouseCircle = () => {
-      gsap.to(document.getElementById(mouseCircleId), { opacity: 1 })
-      window.removeEventListener("mousemove", appearMouseCircle)
-    }
-    window.addEventListener("mousemove", appearMouseCircle)
   }, [mouseCircleId])
 
   useEffect(() => {
-    const fgTimeline = gsap.timeline()
-    const bgTimeline = gsap.timeline()
-
-    fgTimeline.to("#hello-fg", {
-      y: "-70%",
-      opacity: 1,
-      duration: 1 + 1,
-      ease: "expo.out",
-    })
-    bgTimeline.to("#hello-bg", {
-      y: "-60%",
-      opacity: 1,
-      delay: 0.08,
-      duration: 0.92 + 1,
-      ease: "expo.out",
+    const sec1Timeline = gsap.timeline({
+      scrollTrigger: {
+        scrub: true,
+        trigger: document.getElementById("sec1-trigger-1"),
+        start: "center bottom",
+        end: "center 75%",
+      },
     })
 
-    fgTimeline.to("#hello-fg", {
-      y: "-120%",
+    sec1Timeline.to("#sec1-title-1", {
       opacity: 0,
-      duration: 0.2,
-      ease: "expo.out",
+      scale: 1.1,
     })
-    bgTimeline.to("#hello-bg", {
-      y: "-80%",
+  }, [])
+  useEffect(() => {
+    const sec1Timeline = gsap.timeline({
+      scrollTrigger: {
+        scrub: true,
+        trigger: document.getElementById("sec1-trigger-1"),
+        start: "center 75%",
+        end: "center 25%",
+      },
+    })
+
+    sec1Timeline.to("#sec1-title-2", {
+      opacity: 1,
+      scale: 1.1,
+    })
+    sec1Timeline.to("#sec1-title-2", {
       opacity: 0,
-      delay: 0.02,
-      duration: 0.28,
-      ease: "expo.out",
+      scale: 1.2,
     })
+  }, [])
+  useEffect(() => {
+    const sec1Timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: document.getElementById("sec1-trigger-1"),
+        start: "center bottom",
+        end: "center 80%",
+        scrub: true,
+      },
+    })
+    sec1Timeline.to("#sec1-icon-1", { opacity: 0, scale: 1.1 })
+  }, [])
+
+  useEffect(() => {
+    const sec2Timeline = gsap.timeline({
+      scrollTrigger: {
+        scrub: true,
+        trigger: document.getElementById("sec2-trigger-1"),
+        start: "center 90%",
+        end: "center 60%",
+      },
+    })
+
+    sec2Timeline.to("#sec2-title-1", { opacity: 1 })
+    sec2Timeline.to("#sec2-title-1", { opacity: 0.1 })
+  }, [])
+  useEffect(() => {
+    const sec2Timeline = gsap.timeline({
+      scrollTrigger: {
+        scrub: true,
+        trigger: document.getElementById("sec2-trigger-1"),
+        start: "center 70%",
+        end: "center 50%",
+      },
+    })
+
+    sec2Timeline.to("#sec2-title-2", { opacity: 1 })
+    sec2Timeline.to("#sec2-title-2", { opacity: 0.1 })
+  }, [])
+  useEffect(() => {
+    const sec2Timeline = gsap.timeline({
+      scrollTrigger: {
+        scrub: true,
+        trigger: document.getElementById("sec2-trigger-1"),
+        start: "center 50%",
+        end: "center 20%",
+      },
+    })
+
+    sec2Timeline.to("#sec2-title-3", { opacity: 1 })
+    sec2Timeline.to("#sec2-title-3", { opacity: 0.1 })
+  }, [])
+  useEffect(() => {
+    const sec2Timeline = gsap.timeline({
+      scrollTrigger: {
+        scrub: true,
+        trigger: document.getElementById("sec2-trigger-1"),
+        start: "center 40%",
+        end: "center 10%",
+      },
+    })
+
+    sec2Timeline.to("#sec2-title-4", { opacity: 1 })
   }, [])
 
   return (
     <>
       <div className="relative flex min-h-screen w-full flex-col overflow-clip">
-        <div className="sticky top-0 flex h-screen w-full flex-col items-center justify-center px-24">
-          <div className="flex flex-col items-start justify-center">
-            <p className="text-5xl font-black">Hello, I&apos;m</p>
-            <p className="text-8xl font-black">SUJANG958</p>
+        <div
+          id="sec1"
+          className="sticky top-0 flex h-screen w-full flex-col items-center justify-center px-24"
+        >
+          <div
+            className="flex flex-col items-start justify-center"
+            id="sec1-title-1"
+          >
+            <p className="text-5xl font-black tracking-tight">
+              Hello, I&apos;m
+            </p>
+            <p className="text-9xl font-black tracking-tight">SUJANG958</p>
           </div>
-          <div className="rounded-b-full bg-white px-24 py-4"></div>
+          <div id="sec1-title-2" className="absolute opacity-0">
+            <p className="text-7xl font-bold">A developer in Korea</p>
+          </div>
+          <p
+            className="absolute bottom-10 left-1/2 -translate-x-1/2 transform-gpu"
+            id="sec1-icon-1"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="h-6 w-6 stroke-gray-300"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </p>
         </div>
-        <div className="sticky top-0 flex h-screen flex-col bg-black/20 backdrop-blur-md">
-          {/* <p className="absolute -top-10 left-1/2 -translate-x-1/2 transform-gpu animate-pulse text-lg">
-            Try scrolling down
-          </p> */}
-          <div className="grid h-full w-full grid-cols-4 grid-rows-2 gap-10 py-12 px-24 text-black">
-            <div className="group relative rounded-xl bg-white p-4">
-              <p className="text-xl">Hi,</p>
-              <p className="text-3xl font-semibold">I&apos;m Sujang958</p>
-              <div className="flex flex-col items-center justify-center py-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  strokeWidth={1.5}
-                  className="mt-10 h-36 w-36 animate-spin"
-                  viewBox="-11.5 -10.23174 23 20.46348"
-                >
-                  <title>React Logo</title>
-                  <circle cx="0" cy="0" r="2.05" fill="#61dafb" />
-                  <g stroke="#61dafb" strokeWidth="1" fill="none">
-                    <ellipse rx="11" ry="4.2" />
-                    <ellipse rx="11" ry="4.2" transform="rotate(60)" />
-                    <ellipse rx="11" ry="4.2" transform="rotate(120)" />
-                  </g>
-                </svg>
-                <p className="pt-4 text-lg text-gray-500">
-                  I&apos;m a developer
-                </p>
+
+        <div id="sec1-trigger-1"></div>
+        <div className="h-[35vh]"></div>
+
+        <div id="sec2" className="flex h-screen flex-col items-center">
+          <div className="flex h-screen flex-col items-start justify-center px-24">
+            <p
+              className="relative text-8xl font-bold leading-[1.05] text-white opacity-10"
+              id="sec2-title-1"
+            >
+              <div id="sec2-trigger-1" className="absolute top-4">
+                &nbsp;
               </div>
-              <div className="absolute top-0 left-0 right-0 bottom-0 z-10 rounded-xl bg-white/50 p-4 opacity-0 backdrop-blur transition duration-300 group-hover:opacity-100">
-                <div className="flex h-full w-full translate-y-4 transform-gpu flex-col items-center justify-center transition duration-300 group-hover:translate-y-0">
-                  <p className="-mb-2 text-2xl">Let me</p>
-                  <p className="cursor-pointer text-3xl font-black hover:underline">
-                    Introduce &gt;
-                  </p>
-                </div>
-              </div>
+              Hello there,
+            </p>
+            <p
+              className="text-8xl font-bold leading-[1.05] text-white opacity-10"
+              id="sec2-title-2"
+            >
+              My name is Sujang
+            </p>
+            <p
+              className="text-8xl font-bold leading-[1.05] text-white opacity-10"
+              id="sec2-title-3"
+            >
+              And I&apos;m a developer.
+            </p>
+            <div
+              className="text-8xl font-bold leading-[1.05] text-white opacity-10"
+              id="sec2-title-4"
+            >
+              <p>I&apos;m passionate about</p>
+              <p> making something cool</p>
             </div>
-            <div className="group relative col-span-2 rounded-xl bg-white p-4">
-              <p className="text-xl">These are</p>
-              <p className="text-3xl font-semibold">My Projects</p>
-              <div className="py-8 px-2">
-                <table className="w-full table-auto text-left">
-                  <thead className="border-b border-gray-400">
-                    <tr>
-                      <th className="pb-1">Name</th>
-                      <th className="pb-1">Tech Stacks</th>
-                      <th className="pb-1">Related URL</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>vegot</td>
-                      <td>Nodejs</td>
-                      <td>https://github.com/sujang958/vegot</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div className="group relative rounded-xl bg-white p-4">
-              <p className="text-xl">Ipsum</p>
-              <p className="text-3xl font-semibold">Lorem</p>
-              <div className="overflow-hidden py-2">
-                <p className="text-lg">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Explicabo exercitationem maxime natus unde ad deserunt fugit
-                  accusantium nulla, dignissimos eum aliquid fuga et ut
-                  praesentium sequi aperiam eveniet consectetur accusamus
-                  mollitia sint quidem tenetur incidunt tempora alias! Labore
-                  alias officiis ratione sint delectus expedita natus veritatis,
-                </p>
-              </div>
-            </div>
-            <div className="group relative col-span-2 rounded-xl bg-white p-4">
-              <p className="text-xl">Ipsum</p>
-              <p className="text-3xl font-semibold">Lorem</p>
-              <div className="overflow-hidden py-2">
-                <p className="text-lg">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Adipisci maxime repudiandae earum necessitatibus atque
-                  molestiae, laboriosam assumenda facere facilis maiores omnis.
-                  Non incidunt doloribus molestias voluptas est obcaecati harum
-                  natus aliquam maxime voluptates distinctio mollitia
-                  temporibus, earum eos consectetur iste eligendi nobis enim
-                  sequi, alias animi! Quia aliquid architecto et eveniet
-                  aliquam! Cupiditate, placeat natus? Recusandae cumque eaque
-                  numquam corporis, rerum quasi culpa atque aspernatur? Dolor
-                  odio porro voluptatibus asperiores nostrum deserunt fuga odit,
-                  reprehenderit delectus a labore magnam, dignissimos iusto
-                  explicabo eveniet repellat sint est corporis officia, fugiat
-                  eos? Maxime, exercitationem eius suscipit, molestiae sed rem
-                  reprehenderit dolor quod, neque vero in iusto libero!
-                </p>
-              </div>
-            </div>
+          </div>
+        </div>
+        <div className="h-[30vh]"></div>
+
+        <div id="sec3" className="flex h-[60vh] w-full flex-col items-center">
+          <div className="flex w-full max-w-7xl flex-col px-24 py-12">
+            <p className="text-8xl font-bold">Contact</p>
+            <a
+              className="z-50 mt-4 block cursor-pointer text-5xl hover:underline"
+              href="https://github.com/sujang958"
+              target={"_blank"}
+            >
+              &gt; Github
+            </a>
           </div>
         </div>
       </div>
       <div
-        className="pointer-events-none fixed top-1/2 left-1/2 z-50 -m-3 hidden h-6 w-6 cursor-default rounded-full bg-white opacity-0 mix-blend-difference drop-shadow-xl filter md:block"
+        className="pointer-events-none fixed top-1/2 left-1/2 z-50 -m-3 hidden h-4 w-4 rounded-full bg-white opacity-100 mix-blend-difference drop-shadow-xl filter md:block"
         id={mouseCircleId}
       >
         &nbsp;
