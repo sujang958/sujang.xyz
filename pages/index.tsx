@@ -2,7 +2,6 @@ import gsap from "gsap"
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import { GetServerSideProps, NextPage } from "next"
 import { useEffect, useId } from "react"
-import { motion } from "framer-motion"
 
 gsap.registerPlugin(ScrollTrigger)
 

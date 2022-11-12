@@ -1,7 +1,6 @@
 import "../styles/globals.css"
 import type { AppProps } from "next/app"
 import { FC, useEffect, useState } from "react"
-import Header from "../components/header"
 import Lottie from "lottie-react"
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
