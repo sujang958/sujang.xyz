@@ -49,7 +49,7 @@ import Card from "../components/card.astro"
         </div>
       </section>
 
-      <div class="h-[20vh]"></div>
+      <div id="marker-1" class="h-[20vh]"></div>
 
       <section class="h-[50vh] pt-16">
         <p class="text-5xl font-bold">
@@ -102,6 +102,14 @@ import Card from "../components/card.astro"
   })
 
   gsap.to("#arrow-down-icon", { opacity: 1, delay: 0.46, y: 0 })
+
+  gsap.to("#main-text", {
+    y: -200,
+    scrollTrigger: {
+      trigger: "#marker-1",
+      scrub: true,
+    }
+  })
 
   const getRatio = (el: HTMLElement) =>
     window.innerHeight / (window.innerHeight + el.offsetHeight)
