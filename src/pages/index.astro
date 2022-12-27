@@ -5,7 +5,7 @@ import Card from "../components/card.astro"
 
 <Layout>
   <div class="flex flex-col items-center min-h-screen w-full">
-    <div class="absolute bg-black w-full h-[120vh]">&nbsp;</div>
+    <div class="absolute dark:bg-black bg-black/5 w-full h-[120vh]">&nbsp;</div>
     <div class="flex flex-col px-12 max-w-5xl w-full h-full">
       <section class="h-[120vh] items-start justify-between flex flex-col">
         <div class="flex flex-col relative justify-center h-screen w-full">
@@ -38,7 +38,7 @@ import Card from "../components/card.astro"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
-              class="w-4 h-4 stroke-white/70"
+              class="w-4 h-4 dark:stroke-white/70 stroke-black/70"
             >
               <path
                 stroke-linecap="round"
@@ -60,7 +60,7 @@ import Card from "../components/card.astro"
         </p>
         <p class="text-2xl leading-normal mt-10">
           Hi There, My name is Songhun Cho <span
-            class="font-normal text-lg text-white/50">[sʰʌŋhun tso]</span
+            class="font-normal text-lg dark:text-white/50 text-black/50">[sʰʌŋhun tso]</span
           >, I'm a developer based in Korea. I'm passionate in making websites
           with better UI and UX.
         </p>
