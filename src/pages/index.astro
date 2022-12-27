@@ -83,14 +83,22 @@ import Card from "../components/card.astro"
 
   gsap.registerPlugin(ScrollTrigger)
 
-  gsap.utils.toArray(".main-text-item").forEach((element, i) => {
+  gsap.utils.toArray(".main-text-item").forEach((element, i, arr) => {
     const textItem = element as HTMLSpanElement
 
-    gsap.to(textItem, {
+    const animation = gsap.to(textItem, {
       y: 0,
       delay: i * 0.18,
     })
-    // gsap.to(textItem, )
+
+    if (i >= arr.length - 1) {
+      animation.eventCallback("onComplete", () => {
+        gsap.to("#main-text", {
+          scale: 1.08,
+          duration: 0.4,
+        })
+      })
+    }
   })
 
   gsap.to("#arrow-down-icon", { opacity: 1, delay: 0.46, y: 0 })
