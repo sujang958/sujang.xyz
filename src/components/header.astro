@@ -26,17 +26,23 @@
       </div>
       <div class="group cursor-pointer" id="header-button">
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          class="w-8 h-8 stroke-white"
+          viewBox="0 0 761 293"
           fill="none"
-          viewBox="0 0 24 24"
-          class="w-6 h-6 duration-300 transition group-hover:stroke-white/50"
-          stroke-width="1.5"
-          stroke="white"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+            class="transform transition duration-200"
+            id="header-button-icon-up"
+            d="M72 211L501 211"
+            stroke-width="26"
+            stroke-linecap="round"></path>
+          <path
+            class="transform transition duration-200"
+            id="header-button-icon-down"
+            d="M229 80L658 80"
+            stroke-width="26"
+            stroke-linecap="round"></path>
         </svg>
       </div>
     </div>
@@ -78,6 +84,13 @@
   const headerContent = document.getElementById("header-content") as HTMLElement
   const headerButton = document.getElementById("header-button") as HTMLElement
 
+  const headerButtonIconUpperPath = document.querySelector(
+    "#header-button-icon-up"
+  ) as SVGPathElement
+  const headerButtonIconBottomPath = document.querySelector(
+    "#header-button-icon-down"
+  ) as SVGPathElement
+
   headerButton.addEventListener("click", () => {
     if (headerShown) hideHeader()
     else showHeader()
@@ -87,14 +100,37 @@
     headerContent.classList.remove("hidden")
     gsap.to(headerContent, { x: 0, opacity: 1, ease: "power4.out" })
 
+    addAnimationsToIcon()
+
     headerShown = true
   }
 
   const hideHeader = () => {
     const animation = gsap.to(headerContent, { x: "50%", opacity: 0 })
+
+    removeAnimationsFromIcon()
+
     animation.eventCallback("onComplete", () => {
       headerContent.classList.add("hidden")
       headerShown = false
     })
+  }
+
+  const addAnimationsToIcon = () => {
+    headerButtonIconUpperPath.classList.add(
+      "-rotate-45",
+      "translate-y-48",
+      "-translate-x-24"
+    )
+    headerButtonIconBottomPath.classList.add("rotate-45", "-translate-y-48")
+  }
+
+  const removeAnimationsFromIcon = () => {
+    headerButtonIconUpperPath.classList.remove(
+      "-rotate-45",
+      "translate-y-48",
+      "-translate-x-24"
+    )
+    headerButtonIconBottomPath.classList.remove("rotate-45", "-translate-y-48")
   }
 </script>
