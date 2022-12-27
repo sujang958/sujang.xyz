@@ -5,7 +5,7 @@ import Card from "../components/card.astro"
 
 <Layout>
   <div class="flex flex-col items-center min-h-screen w-full">
-    <div class="absolute bg-black w-full h-[120vh]">&nbsp;</div>
+    <div class="absolute dark:bg-black bg-black/5 w-full h-[120vh]">&nbsp;</div>
     <div class="flex flex-col px-12 max-w-5xl w-full h-full">
       <section class="h-[120vh] items-start justify-between flex flex-col">
         <div class="flex flex-col relative justify-center h-screen w-full">
@@ -38,7 +38,7 @@ import Card from "../components/card.astro"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
-              class="w-4 h-4 stroke-white/70"
+              class="w-4 h-4 dark:stroke-white/70 stroke-black/70"
             >
               <path
                 stroke-linecap="round"
@@ -49,7 +49,7 @@ import Card from "../components/card.astro"
         </div>
       </section>
 
-      <div class="h-[20vh]"></div>
+      <div id="marker-1" class="h-[20vh]"></div>
 
       <section class="h-[50vh] pt-16">
         <p class="text-5xl font-bold">
@@ -60,7 +60,7 @@ import Card from "../components/card.astro"
         </p>
         <p class="text-2xl leading-normal mt-10">
           Hi There, My name is Songhun Cho <span
-            class="font-normal text-lg text-white/50">[sʰʌŋhun tso]</span
+            class="font-normal text-lg dark:text-white/50 text-black/50">[sʰʌŋhun tso]</span
           >, I'm a developer based in Korea. I'm passionate in making websites
           with better UI and UX.
         </p>
@@ -83,17 +83,33 @@ import Card from "../components/card.astro"
 
   gsap.registerPlugin(ScrollTrigger)
 
-  gsap.utils.toArray(".main-text-item").forEach((element, i) => {
+  gsap.utils.toArray(".main-text-item").forEach((element, i, arr) => {
     const textItem = element as HTMLSpanElement
 
-    gsap.to(textItem, {
+    const animation = gsap.to(textItem, {
       y: 0,
       delay: i * 0.18,
     })
-    // gsap.to(textItem, )
+
+    if (i >= arr.length - 1) {
+      animation.eventCallback("onComplete", () => {
+        gsap.to("#main-text", {
+          scale: 1.08,
+          duration: 0.4,
+        })
+      })
+    }
   })
 
   gsap.to("#arrow-down-icon", { opacity: 1, delay: 0.46, y: 0 })
+
+  gsap.to("#main-text", {
+    y: -200,
+    scrollTrigger: {
+      trigger: "#marker-1",
+      scrub: true,
+    }
+  })
 
   const getRatio = (el: HTMLElement) =>
     window.innerHeight / (window.innerHeight + el.offsetHeight)
