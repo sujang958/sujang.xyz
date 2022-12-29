@@ -5,7 +5,7 @@ import Card from "../components/card.astro"
 
 <Layout>
   <div class="flex flex-col items-center min-h-screen w-full">
-    <div class="absolute dark:bg-black bg-black/5 w-full h-[120vh]">&nbsp;</div>
+    <div class="absolute dark:bg-black dark:border-0 bg-white border-b border-black/30 w-full h-[120vh]">&nbsp;</div>
     <div class="flex flex-col px-12 max-w-5xl w-full h-full">
       <section class="h-[120vh] items-start justify-between flex flex-col">
         <div class="flex flex-col relative justify-center h-screen w-full">
@@ -88,7 +88,7 @@ import Card from "../components/card.astro"
 
     const animation = gsap.to(textItem, {
       y: 0,
-      delay: i * 0.18,
+      delay: i * 0.19 + 0.3,
     })
 
     if (i >= arr.length - 1) {
@@ -96,12 +96,13 @@ import Card from "../components/card.astro"
         gsap.to("#main-text", {
           scale: 1.08,
           duration: 0.4,
+          delay: 0,
         })
       })
     }
   })
 
-  gsap.to("#arrow-down-icon", { opacity: 1, delay: 0.46, y: 0 })
+  gsap.to("#arrow-down-icon", { opacity: 1, delay: 0.8, y: 0 })
 
   gsap.to("#main-text", {
     y: -200,
