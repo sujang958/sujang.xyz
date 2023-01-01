@@ -1,0 +1,38 @@
+---
+import Layout from "../layouts/layout.astro"
+---
+
+<Layout>
+  <div class="flex h-screen w-full flex-col items-center justify-center">
+    <p class="text-6xl font-bold">404: Page not found</p>
+    <p class="mt-6 text-2xl">
+      There's no page you're looking for, try going home.
+    </p>
+    <img
+      id="rick"
+      src="/images/rick1.jpeg"
+      alt="lol"
+      class="mt-24 w-full max-w-3xl h-96 rounded-xl object-cover"
+    />
+  </div>
+</Layout>
+
+<script>
+  const audio = new Audio("/rick.mp3")
+
+  audio.play()
+  audio.loop = true
+</script>
+
+<script>
+  const rick = document.getElementById("rick") as HTMLImageElement
+
+  setInterval(() => {
+    toggleRick()
+  }, 200)
+
+  const toggleRick = () => {
+    if (rick.src.includes("rick1")) rick.src = "/images/rick2.avif"
+    else rick.src = "/images/rick1.jpeg"
+  }
+</script>
