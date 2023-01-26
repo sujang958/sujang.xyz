@@ -4,33 +4,37 @@ import Card from "../components/card.astro"
 ---
 
 <Layout>
-  <div class="flex flex-col items-center min-h-screen w-full">
-    <div class="absolute dark:bg-black dark:border-0 bg-white border-b border-black/30 w-full h-[120vh]">&nbsp;</div>
-    <div class="flex flex-col px-12 max-w-5xl w-full h-full">
-      <section class="h-[120vh] items-start justify-between flex flex-col">
-        <div class="flex flex-col relative justify-center h-screen w-full">
-          <div class="text-7xl font-bold leading-[1.2] w-4/5" id="main-text">
+  <div class="flex min-h-screen w-full flex-col items-center">
+    <div
+      class="absolute h-[120vh] w-full border-b border-black/30 bg-white dark:border-0 dark:bg-black"
+    >
+      &nbsp;
+    </div>
+    <div class="flex h-full w-full max-w-5xl flex-col px-20">
+      <section class="flex h-[120vh] flex-col items-start justify-between">
+        <div class="relative flex h-screen w-full flex-col justify-center">
+          <div class="w-4/5 text-7xl font-bold leading-[1.2]" id="main-text">
             <div class="overflow-clip">
-              <p class="main-text-item transform-gpu translate-y-full">
+              <p class="main-text-item translate-y-full transform-gpu">
                 Creating websites
               </p>
             </div>
             <div class="overflow-clip">
               <p
-                class="main-text-item transform-gpu translate-y-full bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500 text-transparent"
+                class="main-text-item translate-y-full transform-gpu bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent"
               >
                 with better UI & UX
               </p>
             </div>
             <div class="overflow-clip">
-              <p class="main-text-item transform-gpu translate-y-full">
+              <p class="main-text-item translate-y-full transform-gpu">
                 is moy job
               </p>
             </div>
           </div>
 
           <div
-            class="opacity-0 -translate-y-4 absolute bottom-12 self-center"
+            class="absolute bottom-12 -translate-y-4 self-center opacity-0"
             id="arrow-down-icon"
           >
             <svg
@@ -38,7 +42,7 @@ import Card from "../components/card.astro"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
-              class="w-4 h-4 dark:stroke-white/70 stroke-black/70"
+              class="h-4 w-4 stroke-black/70 dark:stroke-white/70"
             >
               <path
                 stroke-linecap="round"
@@ -54,13 +58,14 @@ import Card from "../components/card.astro"
       <section class="h-[50vh] pt-16">
         <p class="text-5xl font-bold">
           <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-500"
+            class="bg-gradient-to-r from-indigo-400 to-blue-500 bg-clip-text text-transparent"
             >Hello there!</span
           > 🧑‍💻
         </p>
-        <p class="text-2xl leading-normal mt-10">
+        <p class="mt-10 text-2xl leading-normal">
           Hi There, My name is Songhun Cho <span
-            class="font-normal text-lg dark:text-white/50 text-black/50">[sʰʌŋhun tso]</span
+            class="text-lg font-normal text-black/50 dark:text-white/50"
+            >[sʰʌŋhun tso]</span
           >, I'm a developer based in Korea. I'm passionate in making websites
           with better UI and UX.
         </p>
@@ -68,8 +73,8 @@ import Card from "../components/card.astro"
 
       <section class="">
         <p class="text-5xl font-bold">My Projects</p>
-        <p class="text-xl font-medium mt-4">Yes, these are my works.</p>
-        <div class="flex flex-col items-center py-24 px-12 space-y-24">
+        <p class="mt-4 text-xl font-medium">Yes, these are my works.</p>
+        <div class="flex flex-col items-center space-y-24 py-24 px-12">
           <Card />
         </div>
       </section>
@@ -109,7 +114,7 @@ import Card from "../components/card.astro"
     scrollTrigger: {
       trigger: "#marker-1",
       scrub: true,
-    }
+    },
   })
 
   const getRatio = (el: HTMLElement) =>

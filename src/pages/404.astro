@@ -3,6 +3,13 @@ import Layout from "../layouts/layout.astro"
 ---
 
 <Layout>
+  <div
+    id="landing"
+    class="absolute top-0 bottom-0 left-0 right-0 z-50 flex h-screen w-full cursor-pointer flex-col items-center justify-center bg-black/5 backdrop-blur-3xl"
+  >
+    <p class="text-5xl font-bold">Wanna See Contents?</p>
+    <p class="mt-6 text-2xl font-medium">Click anywhere to continue</p>
+  </div>
   <div class="flex h-screen w-full flex-col items-center justify-center">
     <p class="text-6xl font-bold">404: Page not found</p>
     <p class="mt-6 text-2xl">
@@ -12,16 +19,21 @@ import Layout from "../layouts/layout.astro"
       id="rick"
       src="/images/rick1.jpeg"
       alt="lol"
-      class="mt-24 w-full max-w-3xl h-96 rounded-xl object-cover"
+      class="mt-24 h-96 w-full max-w-3xl rounded-xl object-cover"
     />
   </div>
 </Layout>
 
 <script>
   const audio = new Audio("/rick.mp3")
-
-  audio.play()
   audio.loop = true
+
+  const landingScreen = document.getElementById("landing")
+
+  landingScreen?.addEventListener("click", () => {
+    landingScreen.classList.add("hidden")
+    audio.play()
+  })
 </script>
 
 <script>
