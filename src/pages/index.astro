@@ -6,11 +6,7 @@ import Card from "@/components/card.astro"
 
 <Layout>
   <div class="flex min-h-screen w-full flex-col items-center">
-    <div
-      class="absolute h-[120vh] w-full bg-black"
-    >
-      &nbsp;
-    </div>
+    <div class="absolute h-[120vh] w-full bg-black">&nbsp;</div>
     <div class="flex h-full w-full max-w-5xl flex-col px-20">
       <section class="flex h-[120vh] flex-col items-start justify-between">
         <div class="relative flex h-screen w-full flex-col justify-center">
@@ -33,7 +29,14 @@ import Card from "@/components/card.astro"
               </p>
             </div>
           </div>
-
+          <div class="absolute bottom-32 -right-16">
+            <img
+              src="/images/happy.webp"
+              alt=""
+              class="object-contain w-96"
+              draggable="false"
+            />
+          </div>
           <div
             class="absolute bottom-12 -translate-y-4 self-center opacity-0"
             id="arrow-down-icon"
@@ -65,8 +68,7 @@ import Card from "@/components/card.astro"
         </p>
         <p class="mt-10 text-2xl leading-normal">
           Hi There, My name is Songhun Cho <span
-            class="text-lg font-normal text-white/50"
-            >[sʰʌŋhun tso]</span
+            class="text-lg font-normal text-white/50">[sʰʌŋhun tso]</span
           >, I'm a developer based in Korea. I'm passionate in making websites
           with better UI and UX.
         </p>
