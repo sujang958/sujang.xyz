@@ -1,15 +1,12 @@
 ---
+// @ts-expect-error
 import Layout from "../layouts/layout.astro"
-import Card from "../components/card.astro"
+import Card from "@/components/card.astro"
 ---
 
 <Layout>
   <div class="flex min-h-screen w-full flex-col items-center">
-    <div
-      class="absolute h-[120vh] w-full border-b border-black/30 bg-white dark:border-0 dark:bg-black"
-    >
-      &nbsp;
-    </div>
+    <div class="absolute h-[120vh] w-full bg-black">&nbsp;</div>
     <div class="flex h-full w-full max-w-5xl flex-col px-20">
       <section class="flex h-[120vh] flex-col items-start justify-between">
         <div class="relative flex h-screen w-full flex-col justify-center">
@@ -32,7 +29,14 @@ import Card from "../components/card.astro"
               </p>
             </div>
           </div>
-
+          <div class="absolute bottom-32 -right-16">
+            <img
+              src="/images/happy.webp"
+              alt=""
+              class="object-contain w-96"
+              draggable="false"
+            />
+          </div>
           <div
             class="absolute bottom-12 -translate-y-4 self-center opacity-0"
             id="arrow-down-icon"
@@ -42,7 +46,7 @@ import Card from "../components/card.astro"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
-              class="h-4 w-4 stroke-black/70 dark:stroke-white/70"
+              class="h-4 w-4 stroke-white/70"
             >
               <path
                 stroke-linecap="round"
@@ -60,12 +64,11 @@ import Card from "../components/card.astro"
           <span
             class="bg-gradient-to-r from-indigo-400 to-blue-500 bg-clip-text text-transparent"
             >Hello there!</span
-          > 🧑‍💻
+          >
         </p>
         <p class="mt-10 text-2xl leading-normal">
           Hi There, My name is Songhun Cho <span
-            class="text-lg font-normal text-black/50 dark:text-white/50"
-            >[sʰʌŋhun tso]</span
+            class="text-lg font-normal text-white/50">[sʰʌŋhun tso]</span
           >, I'm a developer based in Korea. I'm passionate in making websites
           with better UI and UX.
         </p>
@@ -73,7 +76,6 @@ import Card from "../components/card.astro"
 
       <section class="">
         <p class="text-5xl font-bold">My Projects</p>
-        <p class="mt-4 text-xl font-medium">Yes, these are my works.</p>
         <div class="flex flex-col items-center space-y-24 py-24 px-12">
           <Card />
         </div>
@@ -143,4 +145,29 @@ import Card from "../components/card.astro"
       }
     )
   })
+</script>
+<script>
+  /*by github/davidhckh */
+  const scrollWrap = document.getElementById("layout-main")
+
+  const height = () => scrollWrap.getBoundingClientRect().height
+  const speed = 0.05
+
+  let offset = 0
+
+  const smoothScroll = () => {
+    offset += (window.pageYOffset - offset) * speed
+
+    scrollWrap.style.transform = "translateY(-" + offset + "px) translateZ(0)"
+
+    window.requestAnimationFrame(smoothScroll)
+  }
+  smoothScroll()
+
+  const handleResize = () => {
+    document.body.style.height = Math.floor(height()) + "px"
+  }
+  handleResize()
+
+  window.addEventListener("resize", handleResize)
 </script>
