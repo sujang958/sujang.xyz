@@ -1,173 +1,62 @@
 ---
 // @ts-expect-error
 import Layout from "../layouts/layout.astro"
-import Card from "@/components/card.astro"
 ---
 
+<style>
+  .text-stroke {
+    -webkit-text-stroke: 1px #9c9c9c;
+  }
+</style>
+
 <Layout>
-  <div class="flex min-h-screen w-full flex-col items-center">
-    <div class="absolute h-[120vh] w-full bg-black">&nbsp;</div>
-    <div class="flex h-full w-full max-w-5xl flex-col px-20">
-      <section class="flex h-[120vh] flex-col items-start justify-between">
-        <div class="relative flex h-screen w-full flex-col justify-center">
-          <div class="w-4/5 text-7xl font-bold leading-[1.2]" id="main-text">
-            <div class="overflow-clip">
-              <p class="main-text-item translate-y-full transform-gpu">
-                Creating websites
-              </p>
-            </div>
-            <div class="overflow-clip">
-              <p
-                class="main-text-item translate-y-full transform-gpu bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent"
-              >
-                with better UI & UX
-              </p>
-            </div>
-            <div class="overflow-clip">
-              <p class="main-text-item translate-y-full transform-gpu">
-                is moy job
-              </p>
-            </div>
-          </div>
-          <div class="absolute bottom-32 -right-16">
-            <img
-              src="/images/hapy.gif"
-              alt=""
-              class="object-contain w-96"
-              draggable="false"
-            />
-          </div>
-          <div
-            class="absolute bottom-12 -translate-y-4 self-center opacity-0"
-            id="arrow-down-icon"
+  <section class="h-screen flex flex-col items-center justify-center w-full">
+    <div class="flex flex-col text-center">
+      <div class="-space-y-20">
+        <div class="flex flex-col -space-y-14">
+          <p
+            class="text-8xl font-bold z-10 bg-clip-text text-transparent bg-gradient-to-r from-[#363494] to-[#30C4D8] pb-2"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              class="h-4 w-4 stroke-white/70"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"></path>
-            </svg>
-          </div>
+            Imagino,
+          </p>
+          <p class="text-8xl font-bold text-transparent text-stroke">
+            Imagino,
+          </p>
+          <p class="text-8xl font-bold text-transparent text-stroke">
+            Imagino,
+          </p>
         </div>
-      </section>
-
-      <div id="marker-1" class="h-[20vh]"></div>
-
-      <section class="h-[50vh] pt-16">
-        <p class="text-5xl font-bold">
-          <span
-            class="bg-gradient-to-r from-indigo-400 to-blue-500 bg-clip-text text-transparent"
-            >Hello there!</span
-          >
-        </p>
-        <p class="mt-10 text-2xl leading-normal">
-          Hi There, My name is Songhun Cho <span
-            class="text-lg font-normal text-white/50">[sʰʌŋhun tso]</span
-          >, I'm a developer based in Korea. I'm passionate in making websites
-          with better UI and UX.
-        </p>
-      </section>
-
-      <section class="">
-        <p class="text-5xl font-bold">My Projects</p>
-        <div class="flex flex-col items-center space-y-24 py-24 px-12">
-          <Card />
+        <div class="flex flex-col -space-y-14">
+          <p class="text-8xl font-bold z-10">Diseño,</p>
+          <p class="text-8xl font-bold text-transparent text-stroke">Diseño,</p>
+          <p class="text-8xl font-bold text-transparent text-stroke">Diseño,</p>
         </div>
-      </section>
+        <div class="flex flex-col -space-y-14">
+          <p class="text-8xl font-bold z-10">Realizo.</p>
+          <p class="text-8xl font-bold text-transparent text-stroke">
+            Realizo.
+          </p>
+          <p class="text-8xl font-bold text-transparent text-stroke">
+            Realizo.
+          </p>
+        </div>
+      </div>
+      <div class="py-5"></div>
+      <p class="text-lg text-neutral-400">I imagine, design, realize.</p>
+      <div class="py-7"></div>
+      <div class="flex flex-row items-center justify-center gap-x-6">
+        <a
+          href="/#about"
+          class="bg-neutral-100 text-neutral-800 rounded-lg px-8 py-2.5 font-semibold text-lg"
+          >About me</a
+        >
+        <a
+          href="https://github.com/sujang958"
+          target="_blank"
+          class="text-neutral-100 bg-neutral-800 rounded-lg px-8 py-2.5 font-semibold text-lg"
+          >Github</a
+        >
+      </div>
     </div>
-  </div>
+  </section>
 </Layout>
-
-<script>
-  import gsap from "gsap"
-  import ScrollTrigger from "gsap/ScrollTrigger"
-
-  gsap.registerPlugin(ScrollTrigger)
-
-  gsap.utils.toArray(".main-text-item").forEach((element, i, arr) => {
-    const textItem = element as HTMLSpanElement
-
-    const animation = gsap.to(textItem, {
-      y: 0,
-      delay: i * 0.19 + 0.3,
-    })
-
-    if (i >= arr.length - 1) {
-      animation.eventCallback("onComplete", () => {
-        gsap.to("#main-text", {
-          scale: 1.08,
-          duration: 0.4,
-          delay: 0,
-        })
-      })
-    }
-  })
-
-  gsap.to("#arrow-down-icon", { opacity: 1, delay: 0.8, y: 0 })
-
-  gsap.to("#main-text", {
-    y: -350,
-    scrollTrigger: {
-      trigger: "#marker-1",
-      scrub: true,
-    },
-  })
-
-  const getRatio = (el: HTMLElement) =>
-    window.innerHeight / (window.innerHeight + el.offsetHeight)
-
-  gsap.utils.toArray("div").forEach((div, i) => {
-    const section = div as HTMLDivElement
-
-    gsap.fromTo(
-      section,
-      {
-        backgroundPosition: () =>
-          i ? `50% ${-window.innerHeight * getRatio(section)}px` : "50% 0px",
-      },
-      {
-        backgroundPosition: () =>
-          `50% ${window.innerHeight * (1 - getRatio(section))}px`,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: () => (i ? "top bottom" : "top top"),
-          end: "bottom top",
-          scrub: true,
-          invalidateOnRefresh: true, // to make it responsive
-        },
-      }
-    )
-  })
-</script>
-<script>
-  /*by github/davidhckh */
-  const scrollWrap = document.getElementById("layout-main")
-
-  const height = () => scrollWrap.getBoundingClientRect().height
-  const speed = 0.05
-
-  let offset = 0
-
-  const smoothScroll = () => {
-    offset += (window.pageYOffset - offset) * speed
-
-    scrollWrap.style.transform = "translateY(-" + offset + "px) translateZ(0)"
-
-    window.requestAnimationFrame(smoothScroll)
-  }
-  smoothScroll()
-
-  const handleResize = () => {
-    document.body.style.height = Math.floor(height()) + "px"
-  }
-  handleResize()
-
-  window.addEventListener("resize", handleResize)
-</script>
