@@ -11,32 +11,32 @@ import Layout from "../layouts/layout.astro"
 
 <Layout>
   <section class="h-screen flex flex-col items-center justify-center w-full">
-    <div class="flex flex-col text-center">
+    <main class="flex flex-col text-center">
       <div class="-space-y-20">
-        <div class="flex flex-col -space-y-14">
+        <div data-speed="0.22" class="parallax-item flex flex-col -space-y-14">
           <p
-            class="text-8xl font-bold z-10 bg-clip-text text-transparent bg-gradient-to-r from-[#363494] to-[#30C4D8] pb-2"
+            data-speed="0.1" class="parallax-item text-8xl font-bold z-10 bg-clip-text text-transparent bg-gradient-to-r from-[#363494] to-[#30C4D8] pb-2"
           >
             Imagino,
           </p>
-          <p class="text-8xl font-bold text-transparent text-stroke">
+          <p data-speed="0.05" class="parallax-item text-8xl font-bold text-transparent text-stroke">
             Imagino,
           </p>
-          <p class="text-8xl font-bold text-transparent text-stroke">
+          <p data-speed="0.01" class="parallax-item text-8xl font-bold text-transparent text-stroke">
             Imagino,
           </p>
         </div>
-        <div class="flex flex-col -space-y-14">
-          <p class="text-8xl font-bold z-10">Diseño,</p>
-          <p class="text-8xl font-bold text-transparent text-stroke">Diseño,</p>
-          <p class="text-8xl font-bold text-transparent text-stroke">Diseño,</p>
+        <div data-speed="0.125" class="parallax-item flex flex-col -space-y-14">
+          <p data-speed="0.1" class="parallax-item text-8xl font-bold z-10">Diseño,</p>
+          <p data-speed="0.05" class="parallax-item text-8xl font-bold text-transparent text-stroke">Diseño,</p>
+          <p data-speed="0.01" class="parallax-item text-8xl font-bold text-transparent text-stroke">Diseño,</p>
         </div>
-        <div class="flex flex-col -space-y-14">
-          <p class="text-8xl font-bold z-10">Realizo.</p>
-          <p class="text-8xl font-bold text-transparent text-stroke">
+        <div data-speed="0.075" class="parallax-item flex flex-col -space-y-14">
+          <p data-speed="0.1" class="parallax-item text-8xl font-bold z-10">Realizo.</p>
+          <p data-speed="0.05" class="parallax-item text-8xl font-bold text-transparent text-stroke">
             Realizo.
           </p>
-          <p class="text-8xl font-bold text-transparent text-stroke">
+          <p data-speed="0.01" class="parallax-item text-8xl font-bold text-transparent text-stroke">
             Realizo.
           </p>
         </div>
@@ -57,6 +57,21 @@ import Layout from "../layouts/layout.astro"
           >Github</a
         >
       </div>
-    </div>
+    </main>
   </section>
 </Layout>
+
+<script>
+  import gsap from "gsap"
+  import ScrollTrigger from "gsap/ScrollTrigger"
+
+  gsap.registerPlugin(ScrollTrigger)
+
+  gsap.to(".parallax-item", {
+    scrollTrigger: {
+      scrub: true,
+    },
+    y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed,
+    ease: "none",
+  })
+</script>
