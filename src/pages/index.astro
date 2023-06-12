@@ -10,7 +10,26 @@ import Layout from "../layouts/layout.astro"
 </style>
 
 <Layout>
-  <section class="h-screen flex flex-col items-center justify-center w-full">
+  <section
+    class="h-screen flex flex-col items-center justify-center w-full relative"
+  >
+    <!-- gradient parallax -->
+    <!-- when title gradient change, also change this -->
+    <div
+      class="-z-10 absolute h-screen max-w-full w-full flex flex-col justify-between overflow-clip "
+    >
+      <div
+        data-speed="0.2"
+        class="parallax-item self-start -mt-[10%] -ml-[16%] w-[80vw] h-[80vw] bg-gradient-radial from-blue-500/30 to-transparent rounded-full filter blur-3xl"
+      >
+      </div>
+      <div
+        data-speed="0.5"
+        class="parallax-item self-end -mb-[10%] -mr-[16%] w-[80vw] h-[80vw] bg-gradient-radial from-blue-500/30 to-transparent rounded-full filter blur-3xl"
+      >
+      </div>
+    </div>
+
     <main class="flex flex-col text-center">
       <div class="-space-y-20">
         <div data-speed="0.22" class="parallax-item flex flex-col -space-y-14">
