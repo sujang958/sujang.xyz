@@ -16,15 +16,15 @@ import Layout from "../layouts/layout.astro"
     <!-- gradient parallax -->
     <!-- when title gradient change, also change this -->
     <div
-      class="-z-10 absolute h-screen max-w-full w-full flex flex-col justify-between overflow-clip "
+      class="-z-10 absolute h-screen max-w-full w-full flex flex-col justify-between overflow-clip"
     >
       <div
-        data-speed="0.2"
+        data-speed="0.7"
         class="parallax-item self-start -mt-[10%] -ml-[16%] w-[80vw] h-[80vw] bg-gradient-radial from-blue-500/30 to-transparent rounded-full filter blur-3xl"
       >
       </div>
       <div
-        data-speed="0.5"
+        data-speed="-0.1"
         class="parallax-item self-end -mb-[10%] -mr-[16%] w-[80vw] h-[80vw] bg-gradient-radial from-blue-500/30 to-transparent rounded-full filter blur-3xl"
       >
       </div>
@@ -115,8 +115,9 @@ import Layout from "../layouts/layout.astro"
         alt="Happy Happy Happy Happy"
         class="object-contain"
       />
+      <div class="py-2"></div>
       <p
-        class="text-6xl font-extrabold bg-clip-text bg-gradient-to-b from-white to-neutral-700 text-transparent"
+        class="text-6xl font-extrabold bg-clip-text bg-gradient-to-b from-white to-neutral-700 text-transparent pb-1"
       >
         Let me introduce myself.
       </p>
