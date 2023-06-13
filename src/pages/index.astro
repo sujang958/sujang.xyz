@@ -1,5 +1,7 @@
 ---
 // @ts-expect-error
+import Container from "@/components/Container.astro"
+// @ts-expect-error
 import Layout from "../layouts/layout.astro"
 ---
 
@@ -108,7 +110,7 @@ import Layout from "../layouts/layout.astro"
 
   <section class="flex flex-col items-center" id="about">
     <div
-      class="w-full max-w-5xl h-[50vh] flex flex-col items-center justify-center text-center py-20"
+      class="w-full max-w-5xl h-[60vh] flex flex-col items-center justify-center text-center py-24"
     >
       <img
         src="/images/hapy.gif"
@@ -130,6 +132,182 @@ import Layout from "../layouts/layout.astro"
       </p>
     </div>
   </section>
+
+  <Container class="min-h-screen py-32">
+    <header class="py-12 text-center flex flex-col items-center">
+      <div class="py-6 mb-6 border-l border-neutral-900"></div>
+      <p
+        class="text-transparent bg-clip-text bg-gradient-to-r from-violet-900 to-purple-700 font-semibold text-xl"
+      >
+        Projects
+      </p>
+      <div class="py-5"></div>
+      <p class="text-5xl font-bold">Made with ❤️ and Batteries included</p>
+      <div class="py-5"></div>
+      <div class="w-1/2 text-lg text-neutral-500 leading-normal">
+        I love creating products with simple & intuitive UI/UX. These are some
+        things I've worked on.
+      </div>
+    </header>
+    <section class="py-16 flex flex-row items-center justify-center gap-x-16">
+      <div class="relative flex flex-row items-baseline -space-x-20">
+        <img
+          src="/images/diato.png"
+          alt="Diato image"
+          class="z-10 w-64 object-contain"
+        />
+        <img
+          src="/images/diato.png"
+          alt="Diato image"
+          class="z-10 w-72 object-contain"
+        />
+      </div>
+      <div class="flex flex-col py-6 gap-y-8">
+        <header class="py-2">
+          <p class="text-4xl font-bold">Diato</p>
+          <div class="py-2"></div>
+          <p class="text-base text-neutral-500">
+            To-dos organized by day of the week
+          </p>
+        </header>
+        <div class="flex flex-col gap-y-3">
+          <svg
+            width="512"
+            height="512"
+            viewBox="0 0 512 512"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            class="w-6 h-6"
+          >
+            <rect
+              id="r4"
+              width="512"
+              height="512"
+              x="0"
+              y="0"
+              rx="128"
+              fill="#252525"
+              stroke="#FFFFFF"
+              stroke-width="0"
+              stroke-opacity="100%"
+              paint-order="stroke"></rect><clipPath id="clip"
+              ><use xlink:href="#r4"></use></clipPath
+            ><defs
+              ><linearGradient
+                id="r5"
+                gradientUnits="userSpaceOnUse"
+                gradientTransform="rotate(45)"
+                style="transform-origin: center center 0px;"
+                ><stop stop-color="#252525"></stop><stop
+                  offset="1"
+                  stop-color="#F12711"></stop></linearGradient
+              ><radialGradient
+                id="r6"
+                cx="0"
+                cy="0"
+                r="1"
+                gradientUnits="userSpaceOnUse"
+                gradientTransform="translate(256) rotate(90) scale(512)"
+                ><stop stop-color="white"></stop><stop
+                  offset="1"
+                  stop-color="white"
+                  stop-opacity="0"></stop></radialGradient
+              ></defs
+            ><svg
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              width="352"
+              height="352"
+              x="80"
+              y="80"
+              style="color: rgb(139, 139, 139);"
+              alignment-baseline="middle"
+              ><path
+                d="m9.25 1.75-6.5 6.5h4v6l6.5-6.5h-4v-6Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path></svg
+            ></svg
+          >
+          <p class="text-xl font-semibold">
+            Seperate your interests by day of the week
+          </p>
+          <p class="text-sm text-neutral-500">
+            Focus on what you need to do. Don't get disattracted.
+          </p>
+        </div>
+        <div class="flex flex-col gap-y-3">
+          <svg
+            width="512"
+            height="512"
+            viewBox="0 0 512 512"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            class="w-6 h-6"
+            ><rect
+              id="r4"
+              width="512"
+              height="512"
+              x="0"
+              y="0"
+              rx="128"
+              fill="#252525"
+              stroke="#FFFFFF"
+              stroke-width="0"
+              stroke-opacity="100%"
+              paint-order="stroke"></rect><clipPath id="clip"
+              ><use xlink:href="#r4"></use></clipPath
+            ><defs
+              ><linearGradient
+                id="r5"
+                gradientUnits="userSpaceOnUse"
+                gradientTransform="rotate(45)"
+                style="transform-origin: center center 0px;"
+                ><stop stop-color="#252525"></stop><stop
+                  offset="1"
+                  stop-color="#F12711"></stop></linearGradient
+              ><radialGradient
+                id="r6"
+                cx="0"
+                cy="0"
+                r="1"
+                gradientUnits="userSpaceOnUse"
+                gradientTransform="translate(256) rotate(90) scale(512)"
+                ><stop stop-color="white"></stop><stop
+                  offset="1"
+                  stop-color="white"
+                  stop-opacity="0"></stop></radialGradient
+              ></defs
+            ><svg
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              width="352"
+              height="352"
+              x="80"
+              y="80"
+              style="color: rgb(139, 139, 139);"
+              alignment-baseline="middle"
+              ><path
+                d="m10 5.754-3.984 3.68a1.536 1.536 0 0 0 0 2.294 1.86 1.86 0 0 0 2.482 0L13.25 7.25c1.371-1.267 1.343-3.283-.028-4.55s-3.594-1.267-4.965 0L3.292 7.287c-2.056 1.9-2.056 4.981 0 6.881l.089.082"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path></svg
+            ></svg
+          >
+          <p class="text-xl font-semibold">Share with your friends</p>
+          <p class="text-sm text-neutral-500">
+            Help your friends and grow your friendships.
+          </p>
+        </div>
+      </div>
+    </section>
+  </Container>
 </Layout>
 
 <script>
