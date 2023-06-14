@@ -2,5 +2,9 @@
 
 > Made with Astro, TailwindCSS, GSAP    
 
-https://sujang.xyz
+## To-dos
 
+- [ ] Optimize the header for mobile
+- [ ] Animate the gradient and position of hero text
+- [ ] Create a icon
+- [ ] Create a work page

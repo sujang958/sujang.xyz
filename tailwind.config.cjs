@@ -5,16 +5,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        // pretendard: [
-        //   "Pretendard Variable",
-        //   "-apple-system",
-        //   "Noto Sans KR",
-        //   "sans-serif",
-        // ],
-        poppins: ["Poppins", "sans-serif"],
+        inter: ["Inter", "-apple-system", "Noto Sans", "sans-serif"],
       },
-      colors: {
-        "not-black": "#161616",
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
     },
   },
