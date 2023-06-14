@@ -19,73 +19,56 @@ import Card from "@/components/card.astro"
     <!-- gradient parallax -->
     <!-- when title gradient change, also change this -->
     <div
-      class="-z-10 absolute h-screen max-w-full w-full flex flex-col justify-between overflow-clip"
+      class="-z-10 absolute h-screen min-w-full flex flex-col justify-between overflow-clip"
     >
       <div
-        data-speed="0.7"
-        class="parallax-item self-start -mt-[10%] -ml-[16%] w-[80vw] h-[80vw] bg-gradient-radial from-blue-500/30 to-transparent rounded-full filter blur-3xl"
+        id="radial-gradient-1"
+        class="self-start -mt-[10%] -ml-[16%] w-[76vw] h-[76vw] bg-gradient-radial from-blue-500/30 to-transparent rounded-full filter blur-3xl opacity-0 -translate-y-full"
       >
       </div>
       <div
-        data-speed="-0.1"
-        class="parallax-item self-end -mb-[10%] -mr-[16%] w-[80vw] h-[80vw] bg-gradient-radial from-blue-500/30 to-transparent rounded-full filter blur-3xl"
+        id="radial-gradient-2"
+        class="self-end -mb-[10%] -mr-[16%] w-[76vw] h-[76vw] bg-gradient-radial from-blue-500/30 to-transparent rounded-full filter blur-3xl opacity-0 translate-y-full"
       >
       </div>
     </div>
 
     <main class="flex flex-col text-center">
       <div class="-space-y-20">
-        <div data-speed="0.22" class="parallax-item flex flex-col -space-y-14">
+        <div
+          class="hero-texts flex flex-col -space-y-14 opacity-0 translate-y-12"
+        >
           <p
-            data-speed="0.1"
-            class="parallax-item text-8xl font-bold z-10 bg-clip-text text-transparent bg-gradient-to-r from-[#363494] to-[#30C4D8] pb-2"
+            class="duration-1000 transition text-8xl font-bold z-10 bg-clip-text text-transparent bg-gradient-to-r from-[#363494] to-[#30C4D8] pb-2"
           >
             Imagino,
           </p>
-          <p
-            data-speed="0.05"
-            class="parallax-item text-8xl font-bold text-transparent text-stroke"
-          >
+          <p class="text-8xl font-bold text-transparent text-stroke">
             Imagino,
           </p>
-          <p
-            data-speed="0.01"
-            class="parallax-item text-8xl font-bold text-transparent text-stroke"
-          >
+          <p class="text-8xl font-bold text-transparent text-stroke">
             Imagino,
           </p>
         </div>
-        <div data-speed="0.125" class="parallax-item flex flex-col -space-y-14">
-          <p data-speed="0.1" class="parallax-item text-8xl font-bold z-10">
+        <div
+          class="hero-texts flex flex-col -space-y-14 opacity-0 translate-y-12"
+        >
+          <p class="duration-1000 transition text-8xl font-bold z-10">
             Diseño,
           </p>
-          <p
-            data-speed="0.05"
-            class="parallax-item text-8xl font-bold text-transparent text-stroke"
-          >
-            Diseño,
-          </p>
-          <p
-            data-speed="0.01"
-            class="parallax-item text-8xl font-bold text-transparent text-stroke"
-          >
-            Diseño,
-          </p>
+          <p class="text-8xl font-bold text-transparent text-stroke">Diseño,</p>
+          <p class="text-8xl font-bold text-transparent text-stroke">Diseño,</p>
         </div>
-        <div data-speed="0.075" class="parallax-item flex flex-col -space-y-14">
-          <p data-speed="0.1" class="parallax-item text-8xl font-bold z-10">
+        <div
+          class="hero-texts flex flex-col -space-y-14 opacity-0 translate-y-12"
+        >
+          <p class="duration-1000 transition text-8xl font-bold z-10">
             Realizo.
           </p>
-          <p
-            data-speed="0.05"
-            class="parallax-item text-8xl font-bold text-transparent text-stroke"
-          >
+          <p class="text-8xl font-bold text-transparent text-stroke">
             Realizo.
           </p>
-          <p
-            data-speed="0.01"
-            class="parallax-item text-8xl font-bold text-transparent text-stroke"
-          >
+          <p class="text-8xl font-bold text-transparent text-stroke">
             Realizo.
           </p>
         </div>
@@ -162,15 +145,39 @@ import Card from "@/components/card.astro"
 
 <script>
   import gsap from "gsap"
-  import ScrollTrigger from "gsap/ScrollTrigger"
+  import { Back } from "gsap"
+  import { CustomEase } from "gsap/all"
 
-  gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(CustomEase)
 
-  gsap.to(".parallax-item", {
-    scrollTrigger: {
-      scrub: true,
-    },
-    y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed,
-    ease: "none",
+  const radialGradient1 = document.getElementById("radial-gradient-1")
+  const radialGradient2 = document.getElementById("radial-gradient-2")
+
+  const heroTexts = document.querySelectorAll(".hero-texts")
+
+  /*ease: CustomEase.create(
+      "custom",
+      "M0,0 C0,0 0.245,-0.051 0.434,0.118 0.512,0.188 0.584,0.735 0.636,0.838 0.77,1.104 1,1 1,1 "
+    ), */
+
+  gsap.to(radialGradient1, {
+    y: 0,
+    opacity: 1,
+    duration: 0.7,
+  })
+  gsap.to(radialGradient2, {
+    y: 0,
+    opacity: 1,
+    duration: 0.7,
+  })
+
+  heroTexts.forEach((heroTextContainer, i) => {
+    gsap.to(heroTextContainer, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      delay: i * 0.2,
+      ease: Back.easeOut.config(1.1),
+    })
   })
 </script>
