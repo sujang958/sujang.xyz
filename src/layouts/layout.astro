@@ -27,29 +27,3 @@ import Header from "../components/header.astro"
     </div>
   </body>
 </html>
-
-<script>
-  /*by github/davidhckh */
-  const scrollWrap = document.getElementById("layout-main")
-
-  const height = () => scrollWrap.getBoundingClientRect().height
-  const speed = 0.05
-
-  let offset = 0
-
-  const smoothScroll = () => {
-    offset += (window.scrollY - offset) * speed
-
-    scrollWrap.style.transform = "translateY(-" + offset + "px) translateZ(0)"
-
-    window.requestAnimationFrame(smoothScroll)
-  }
-  smoothScroll()
-
-  const handleResize = () => {
-    document.body.style.height = Math.floor(height()) + "px"
-  }
-  handleResize()
-
-  window.addEventListener("resize", handleResize)
-</script>
