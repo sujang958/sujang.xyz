@@ -7,22 +7,24 @@ interface Props {
 const { title, description } = Astro.props
 ---
 
-<section class="py-16 flex flex-row items-center justify-center gap-x-16">
+<section
+  class="px-12 md:px-0 py-16 flex flex-row items-center justify-center gap-x-16 flex-wrap gap-y-8"
+>
   <div class="relative flex flex-row items-baseline -space-x-20">
     <img
       src="/images/diato.png"
       alt="Diato image"
-      class="z-10 w-64 object-contain"
+      class="z-10 w-36 md:w-64 object-contain"
     />
     <img
       src="/images/diato.png"
       alt="Diato image"
-      class="z-10 w-72 object-contain"
+      class="z-10 w-44 md:w-72 object-contain"
     />
   </div>
-  <div class="flex flex-col py-6 gap-y-8">
+  <div class="flex flex-col py-6 gap-y-10">
     <header class="py-2">
-      <p class="text-5xl font-bold capitalize">{title}</p>
+      <p class="text-4xl md:text-5xl font-bold capitalize">{title}</p>
       <div class="py-2"></div>
       <p class="text-base text-neutral-500">
         {description}
