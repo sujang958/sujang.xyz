@@ -94,7 +94,7 @@ import Card from "@/components/card.astro"
 
   <section class="flex flex-col items-center" id="about">
     <div
-      class="w-full max-w-5xl h-[70vh] flex flex-col items-center justify-center text-center py-24 gap-y-2"
+      class="w-full max-w-5xl h-[78vh] flex flex-col items-center justify-center text-center py-24 gap-y-2"
     >
       <img
         src="/images/hapy.gif"
@@ -102,9 +102,22 @@ import Card from "@/components/card.astro"
         class="object-contain"
       />
       <p
-        class="text-7xl font-extrabold bg-clip-text bg-gradient-to-b from-white to-neutral-700 text-transparent pb-1"
+        class="text-7xl font-extrabold bg-clip-text bg-gradient-to-b from-white to-neutral-700 text-transparent pb-1 relative"
       >
-        Let me introduce myself.
+        Let me introduce myself
+
+        <img
+          src="/images/dot-grid.png"
+          alt=""
+          data-speed="0.06"
+          class="parallax-item absolute -top-1/3 -right-16 -z-10"
+        />
+        <img
+          src="/images/icing.png"
+          alt=""
+          data-speed="0.01"
+          class="parallax-item absolute -top-full -left-20 -z-10"
+        />
       </p>
       <p
         class="text-lg leading-normal text-neutral-400 whitespace-normal w-3/4 py-4"
@@ -179,5 +192,20 @@ import Card from "@/components/card.astro"
       delay: i * 0.2,
       ease: Back.easeOut.config(1.1),
     })
+  })
+</script>
+
+<script>
+  import gsap from "gsap"
+  import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+  gsap.registerPlugin(ScrollTrigger)
+
+  gsap.to(".parallax-item", {
+    scrollTrigger: {
+      scrub: true,
+    },
+    y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed,
+    ease: "none",
   })
 </script>
