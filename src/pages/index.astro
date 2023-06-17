@@ -34,58 +34,80 @@ import Card from "@/components/card.astro"
     </div>
 
     <main class="flex flex-col text-center">
-      <div class="-space-y-20">
+      <div class="-space-y-10 md:-space-y-20">
         <div
           class="hero-texts flex flex-col -space-y-14 opacity-0 translate-y-12"
         >
           <p
-            class="duration-1000 transition text-8xl font-bold z-10 bg-clip-text text-transparent bg-gradient-to-r from-[#363494] to-[#30C4D8] pb-2"
+            class="duration-1000 transition text-7xl md:text-8xl font-bold z-10 bg-clip-text text-transparent bg-gradient-to-r from-[#363494] to-[#30C4D8] pb-2"
           >
             Imagino,
           </p>
-          <p class="text-8xl font-bold text-transparent text-stroke">
+          <p
+            class="text-7xl md:text-8xl font-bold text-transparent text-stroke"
+          >
             Imagino,
           </p>
-          <p class="text-8xl font-bold text-transparent text-stroke">
+          <p
+            class="text-7xl md:text-8xl font-bold text-transparent text-stroke"
+          >
             Imagino,
           </p>
         </div>
         <div
           class="hero-texts flex flex-col -space-y-14 opacity-0 translate-y-12"
         >
-          <p class="duration-1000 transition text-8xl font-bold z-10">
+          <p
+            class="duration-1000 transition text-7xl md:text-8xl font-bold z-10"
+          >
             Diseño,
           </p>
-          <p class="text-8xl font-bold text-transparent text-stroke">Diseño,</p>
-          <p class="text-8xl font-bold text-transparent text-stroke">Diseño,</p>
+          <p
+            class="text-7xl md:text-8xl font-bold text-transparent text-stroke"
+          >
+            Diseño,
+          </p>
+          <p
+            class="text-7xl md:text-8xl font-bold text-transparent text-stroke"
+          >
+            Diseño,
+          </p>
         </div>
         <div
           class="hero-texts flex flex-col -space-y-14 opacity-0 translate-y-12"
         >
-          <p class="duration-1000 transition text-8xl font-bold z-10">
+          <p
+            class="duration-1000 transition text-7xl md:text-8xl font-bold z-10"
+          >
             Realizo.
           </p>
-          <p class="text-8xl font-bold text-transparent text-stroke">
+          <p
+            class="text-7xl md:text-8xl font-bold text-transparent text-stroke"
+          >
             Realizo.
           </p>
-          <p class="text-8xl font-bold text-transparent text-stroke">
+          <p
+            class="text-7xl md:text-8xl font-bold text-transparent text-stroke"
+          >
             Realizo.
           </p>
         </div>
       </div>
       <div class="py-5"></div>
-      <p class="text-lg text-neutral-400">I imagine, design, realize.</p>
+      <p class="text-base md:text-lg text-neutral-400">
+        I imagine, design, realize.
+      </p>
       <div class="py-7"></div>
       <div class="flex flex-row items-center justify-center gap-x-6">
         <a
           href="/#about"
-          class="bg-neutral-100 text-neutral-800 rounded-lg px-8 py-2.5 font-semibold text-lg"
+          class="bg-neutral-100 text-neutral-800 rounded-lg px-6 md:px-8 py-2 md:py-2.5 font-semibold text-sm md:text-lg"
           >About me</a
         >
         <a
           href="https://github.com/sujang958"
           target="_blank"
-          class="text-neutral-100 bg-neutral-800 rounded-lg px-8 py-2.5 font-medium text-lg"
+          class="text-neutral-100 bg-neutral-800 rounded-lg px-6 md:px-8 py-2 md:py-2.5 font-medium text-sm md:text-lg"
           >Github</a
         >
       </div>
@@ -94,20 +116,22 @@ import Card from "@/components/card.astro"
 
   <section class="flex flex-col items-center" id="about">
     <div
-      class="w-full max-w-5xl h-[70vh] flex flex-col items-center justify-center text-center py-24 gap-y-2"
+      class="w-full max-w-5xl h-[78vh] flex flex-col items-center justify-center text-center py-24 gap-y-2"
     >
       <img
-        src="/images/hapy.gif"
+        src="/images/hapwy.webp"
         alt="Happy Happy Happy Happy"
-        class="object-contain"
+        class="object-contain w-72"
+        width="300"
+        height="300"
       />
       <p
-        class="text-7xl font-extrabold bg-clip-text bg-gradient-to-b from-white to-neutral-700 text-transparent pb-1"
+        class="text-6xl md:text-7xl font-extrabold bg-clip-text bg-gradient-to-b from-white to-neutral-700 text-transparent tracking-tight pb-2"
       >
-        Let me introduce myself.
+        Let me introduce myself
       </p>
       <p
-        class="text-lg leading-normal text-neutral-400 whitespace-normal w-3/4 py-4"
+        class="text-base md:text-lg leading-normal text-neutral-400 whitespace-normal w-3/4 py-6"
       >
         Hello, I'm Songhun Cho, a developer and designer based in South Korea. I
         am currently a student and have been coding since 2017. I'm not only
@@ -132,9 +156,11 @@ import Card from "@/components/card.astro"
         Projects
       </p>
       <div class="py-5"></div>
-      <p class="text-5xl font-bold">Made with ❤️ and Batteries included</p>
+      <p class="text-5xl font-bold px-4">Made with ❤️ and Batteries included</p>
       <div class="py-5"></div>
-      <div class="w-1/2 text-lg text-neutral-500 leading-normal">
+      <div
+        class="w-3/4 md:w-1/2 text-base md:text-lg text-neutral-500 leading-normal"
+      >
         I love creating products with simple & intuitive UI/UX. These are some
         things I've worked on.
       </div>
