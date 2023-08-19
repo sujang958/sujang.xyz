@@ -5,22 +5,29 @@ import Layout from "../layouts/layout.astro"
 <Layout>
   <div
     id="landing"
-    class="absolute top-0 bottom-0 left-0 right-0 z-50 flex h-screen w-full cursor-pointer flex-col items-center justify-center bg-black/5 backdrop-blur-3xl"
+    class="absolute inset-0 z-50 flex h-screen w-full cursor-pointer flex-col items-center justify-center bg-black/25 text-center backdrop-blur-3xl"
   >
     <p class="text-5xl font-bold">Wanna See Contents?</p>
     <p class="mt-6 text-2xl font-medium">Click anywhere to continue</p>
   </div>
-  <div class="flex h-screen w-full flex-col items-center justify-center">
-    <p class="text-6xl font-bold">404: Page not found</p>
-    <p class="mt-6 text-2xl">
-      There's no page you're looking for, try going home.
+
+  <div
+    class="flex h-screen w-full flex-col items-center justify-center gap-y-8 py-16 px-12"
+  >
+    <p class="text-center font-[Consolas] text-5xl font-bold md:text-6xl">
+      <span id="hero-title"></span><span id="caret" class="opacity-0">_</span>
     </p>
     <img
       id="rick"
       src="/images/rick1.jpeg"
       alt="lol"
-      class="mt-24 h-96 w-full max-w-3xl rounded-xl object-cover"
+      class="mt-8 h-72 w-full max-w-3xl rounded-xl object-cover md:h-80"
     />
+    <a
+      href="/"
+      class="mt-8 rounded-lg bg-white px-5 py-1 font-semibold text-black md:px-6 md:py-1.5"
+      >Go back to the home</a
+    >
   </div>
 </Layout>
 
@@ -33,7 +40,20 @@ import Layout from "../layouts/layout.astro"
   landingScreen?.addEventListener("click", () => {
     landingScreen.classList.add("hidden")
     audio.play()
+
+    animateTitle()
   })
+
+  const animateTitle = () => {
+    const titleElement = document.getElementById("hero-title")
+    const sentence = "Page Not Found"
+
+    sentence.split("").forEach((char, i) => {
+      setTimeout(() => {
+        titleElement.innerText += char
+      }, i * 100)
+    })
+  }
 </script>
 
 <script>
@@ -47,4 +67,12 @@ import Layout from "../layouts/layout.astro"
     if (rick.src.includes("rick1")) rick.src = "/images/rick2.avif"
     else rick.src = "/images/rick1.jpeg"
   }
+</script>
+
+<script>
+  const caret = document.getElementById("caret")
+
+  setInterval(() => {
+    caret.classList.toggle("opacity-100")
+  }, 550)
 </script>
