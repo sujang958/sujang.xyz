@@ -1,7 +1,5 @@
 ---
-// @ts-expect-error
 import Container from "@/components/Container.astro"
-// @ts-expect-error
 import Layout from "../layouts/layout.astro"
 import Card from "@/components/card.astro"
 ---
@@ -14,21 +12,21 @@ import Card from "@/components/card.astro"
 
 <Layout>
   <section
-    class="h-screen flex flex-col items-center justify-center w-full relative"
+    class="relative flex h-screen w-full flex-col items-center justify-center"
   >
     <!-- gradient parallax -->
     <!-- when title gradient change, also change this -->
     <div
-      class="-z-10 absolute h-screen min-w-full flex flex-col justify-between overflow-clip"
+      class="absolute -z-10 flex h-screen min-w-full flex-col justify-between overflow-clip"
     >
       <div
         id="radial-gradient-1"
-        class="self-start -mt-[10%] -ml-[16%] w-[76vw] h-[76vw] bg-gradient-radial from-blue-500/30 to-transparent rounded-full filter blur-3xl opacity-0 -translate-y-full"
+        class="-mt-[10%] -ml-[16%] h-[76vw] w-[76vw] -translate-y-full self-start rounded-full bg-gradient-radial from-blue-500/30 to-transparent opacity-0 blur-3xl filter"
       >
       </div>
       <div
         id="radial-gradient-2"
-        class="self-end -mb-[10%] -mr-[16%] w-[76vw] h-[76vw] bg-gradient-radial from-blue-500/30 to-transparent rounded-full filter blur-3xl opacity-0 translate-y-full"
+        class="-mb-[10%] -mr-[16%] h-[76vw] w-[76vw] translate-y-full self-end rounded-full bg-gradient-radial from-blue-500/30 to-transparent opacity-0 blur-3xl filter"
       >
       </div>
     </div>
@@ -36,78 +34,78 @@ import Card from "@/components/card.astro"
     <main class="flex flex-col text-center">
       <div class="-space-y-10 md:-space-y-20">
         <div
-          class="hero-texts flex flex-col -space-y-14 opacity-0 translate-y-12"
+          class="hero-texts flex translate-y-12 flex-col -space-y-14 opacity-0"
         >
           <p
-            class="duration-1000 transition text-7xl md:text-8xl font-bold z-10 bg-clip-text text-transparent bg-gradient-to-r from-[#363494] to-[#30C4D8] pb-2"
+            class="z-10 bg-gradient-to-r from-[#363494] to-[#30C4D8] bg-clip-text pb-2 text-7xl font-bold text-transparent transition duration-1000 md:text-8xl"
           >
             Imagino,
           </p>
           <p
-            class="text-7xl md:text-8xl font-bold text-transparent text-stroke"
+            class="text-stroke text-7xl font-bold text-transparent md:text-8xl"
           >
             Imagino,
           </p>
           <p
-            class="text-7xl md:text-8xl font-bold text-transparent text-stroke"
+            class="text-stroke text-7xl font-bold text-transparent md:text-8xl"
           >
             Imagino,
           </p>
         </div>
         <div
-          class="hero-texts flex flex-col -space-y-14 opacity-0 translate-y-12"
+          class="hero-texts flex translate-y-12 flex-col -space-y-14 opacity-0"
         >
           <p
-            class="duration-1000 transition text-7xl md:text-8xl font-bold z-10"
+            class="z-10 text-7xl font-bold transition duration-1000 md:text-8xl"
           >
             Diseño,
           </p>
           <p
-            class="text-7xl md:text-8xl font-bold text-transparent text-stroke"
+            class="text-stroke text-7xl font-bold text-transparent md:text-8xl"
           >
             Diseño,
           </p>
           <p
-            class="text-7xl md:text-8xl font-bold text-transparent text-stroke"
+            class="text-stroke text-7xl font-bold text-transparent md:text-8xl"
           >
             Diseño,
           </p>
         </div>
         <div
-          class="hero-texts flex flex-col -space-y-14 opacity-0 translate-y-12"
+          class="hero-texts flex translate-y-12 flex-col -space-y-14 opacity-0"
         >
           <p
-            class="duration-1000 transition text-7xl md:text-8xl font-bold z-10"
+            class="z-10 text-7xl font-bold transition duration-1000 md:text-8xl"
           >
             Realizo.
           </p>
           <p
-            class="text-7xl md:text-8xl font-bold text-transparent text-stroke"
+            class="text-stroke text-7xl font-bold text-transparent md:text-8xl"
           >
             Realizo.
           </p>
           <p
-            class="text-7xl md:text-8xl font-bold text-transparent text-stroke"
+            class="text-stroke text-7xl font-bold text-transparent md:text-8xl"
           >
             Realizo.
           </p>
         </div>
       </div>
       <div class="py-5"></div>
-      <p class="text-base md:text-lg text-neutral-400">
+      <p class="text-base text-neutral-400 md:text-lg">
         I imagine, design, realize.
       </p>
       <div class="py-7"></div>
       <div class="flex flex-row items-center justify-center gap-x-6">
         <a
           href="/#about"
-          class="bg-neutral-100 text-neutral-800 rounded-lg px-6 md:px-8 py-2 md:py-2.5 font-semibold text-sm md:text-lg"
+          class="rounded-lg bg-neutral-100 px-6 py-2 text-sm font-semibold text-neutral-800 md:px-8 md:py-2.5 md:text-lg"
           >About me</a
         >
         <a
           href="https://github.com/sujang958"
           target="_blank"
-          class="text-neutral-100 bg-neutral-800 rounded-lg px-6 md:px-8 py-2 md:py-2.5 font-medium text-sm md:text-lg"
+          class="rounded-lg bg-neutral-800 px-6 py-2 text-sm font-medium text-neutral-100 md:px-8 md:py-2.5 md:text-lg"
           >Github</a
         >
       </div>
@@ -116,22 +114,22 @@ import Card from "@/components/card.astro"
 
   <section class="flex flex-col items-center" id="about">
     <div
-      class="w-full max-w-5xl h-[78vh] flex flex-col items-center justify-center text-center py-24 gap-y-2"
+      class="flex h-[78vh] w-full max-w-5xl flex-col items-center justify-center gap-y-2 py-24 text-center"
     >
       <img
         src="/images/hapwy.webp"
         alt="Happy Happy Happy Happy"
-        class="object-contain w-72"
+        class="w-72 object-contain"
         width="300"
         height="300"
       />
       <p
-        class="text-6xl md:text-7xl font-extrabold bg-clip-text bg-gradient-to-b from-white to-neutral-700 text-transparent tracking-tight pb-2"
+        class="bg-gradient-to-b from-white to-neutral-700 bg-clip-text pb-2 text-6xl font-extrabold tracking-tight text-transparent md:text-7xl"
       >
         Let me introduce myself
       </p>
       <p
-        class="text-base md:text-lg leading-normal text-neutral-400 whitespace-normal w-3/4 py-6"
+        class="w-3/4 whitespace-normal py-6 text-base leading-normal text-neutral-400 md:text-lg"
       >
         Hello, I'm Songhun Cho, a developer and designer based in South Korea. I
         am currently a student and have been coding since 2017. I'm not only
@@ -141,25 +139,25 @@ import Card from "@/components/card.astro"
       <div class="py-2"></div>
       <a
         href="#project"
-        class="bg-neutral-100 text-black rounded-lg px-6 py-2.5 font-semibold text-sm"
+        class="rounded-lg bg-neutral-100 px-6 py-2.5 text-sm font-semibold text-black"
         >See projects</a
       >
     </div>
   </section>
 
   <Container class="min-h-screen py-32" id="project">
-    <header class="py-12 text-center flex flex-col items-center">
-      <div class="py-6 mb-8 border-l border-neutral-900"></div>
+    <header class="flex flex-col items-center py-12 text-center">
+      <div class="mb-8 border-l border-neutral-900 py-6"></div>
       <p
-        class="text-transparent bg-clip-text bg-gradient-to-r from-violet-900 to-purple-700 font-semibold text-xl"
+        class="bg-gradient-to-r from-violet-900 to-purple-700 bg-clip-text text-xl font-semibold text-transparent"
       >
         Projects
       </p>
       <div class="py-5"></div>
-      <p class="text-5xl font-bold px-4">Made with ❤️ and Batteries included</p>
+      <p class="px-4 text-5xl font-bold">Made with ❤️ and Batteries included</p>
       <div class="py-5"></div>
       <div
-        class="w-3/4 md:w-1/2 text-base md:text-lg text-neutral-500 leading-normal"
+        class="w-3/4 text-base leading-normal text-neutral-500 md:w-1/2 md:text-lg"
       >
         I love creating products with simple & intuitive UI/UX. These are some
         things I've worked on.
