@@ -4,9 +4,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        wanted: [
-          "Wanted Sans Variable",
-          "Wanted Sans",
+        inter: [
+          "Inter",
+          "Pretendard",
           "-apple-system",
           "BlinkMacSystemFont",
           "system-ui",
