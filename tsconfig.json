@@ -1,16 +1,3 @@
 {
-  "extends": "astro/tsconfigs/base",
-  "compilerOptions": {
-    "verbatimModuleSyntax": true,
-    "moduleResolution": "nodenext",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    },
-    "plugins": [
-      {
-        "name": "@astrojs/ts-plugin"
-      }
-    ]
-  }
+  "extends": "astro/tsconfigs/strict"
 }
