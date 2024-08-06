@@ -1,4 +1,6 @@
 ---
+import Header from '@/components/Header.astro'
+
 interface Props {
   title?: string
 }
@@ -22,6 +24,7 @@ const { title = "Hunna" } = Astro.props
     />
   </head>
   <body class="bg-neutral-950 font-inter text-white">
+    <Header />
     <div class="min-h-screen w-full overflow-clip">
       <slot />
     </div>
