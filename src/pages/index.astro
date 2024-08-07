@@ -1,4 +1,5 @@
 ---
+import Section from "@/components/Section.astro"
 import Layout from "@/layouts/Layout.astro"
 ---
 
@@ -13,7 +14,7 @@ import Layout from "@/layouts/Layout.astro"
     </div>
 
     <div
-      class="absolute bottom-[-50%] left-[-25%] rounded-full bg-white p-16 opacity-50 blur-[256px] sm:p-20 md:p-40 xl:p-64"
+      class="absolute bottom-[-50%] left-[-30%] rounded-full bg-white p-16 opacity-50 blur-[256px] sm:p-20 md:p-40 xl:p-64"
     >
       &nbsp;
     </div>
@@ -47,4 +48,14 @@ import Layout from "@/layouts/Layout.astro"
 
     <!-- TODO: Add some revealing (down to up) animations in turn when loaded -->
   </section>
+  <Section
+    class="flex flex-col items-center justify-center px-16 pt-16 pb-32"
+  >
+    <p class="text-5xl font-semibold leading-tight">
+      I'm a 16 y/o developer, <span class="text-neutral-600"
+        >who loves web development and graphic design. I'm very keen on building
+        things that can solve small things in everyday life.</span
+      >
+    </p>
+  </Section>
 </Layout>

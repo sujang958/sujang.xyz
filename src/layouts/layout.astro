@@ -1,5 +1,5 @@
 ---
-import Header from '@/components/Header.astro'
+import Header from "@/components/Header.astro"
 
 interface Props {
   title?: string
@@ -30,3 +30,37 @@ const { title = "Hunna" } = Astro.props
     </div>
   </body>
 </html>
+
+<script>
+  import LocomotiveScroll from "locomotive-scroll"
+
+  const scroll = new LocomotiveScroll({
+    el: document.body,
+    smooth: true,
+    getSpeed
+  })
+</script>
+
+<style is:global>
+  /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #797979 #ffffff00;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 24px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff00;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 10px;
+    border: 3px solid #ffffff00;
+  }
+</style>
