@@ -1,4 +1,5 @@
 ---
+import Footer from "@/components/Footer.astro"
 import Header from "@/components/Header.astro"
 
 interface Props {
@@ -25,9 +26,10 @@ const { title = "Hunna" } = Astro.props
   </head>
   <body class="bg-neutral-950 font-inter text-white">
     <Header />
-    <div class="min-h-screen w-full overflow-clip">
+    <div id="main" class="min-h-screen w-full overflow-clip">
       <slot />
     </div>
+    <Footer />
   </body>
 </html>
 
@@ -35,7 +37,7 @@ const { title = "Hunna" } = Astro.props
   import LocomotiveScroll from "locomotive-scroll"
 
   const scroll = new LocomotiveScroll({
-    el: document.body,
+    el: document.getElementById("main")!,
     smooth: true,
   })
 </script>
