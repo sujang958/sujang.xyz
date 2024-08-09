@@ -34,12 +34,29 @@ const { title = "Hunna" } = Astro.props
 </html>
 
 <script>
-  import LocomotiveScroll from "locomotive-scroll"
+  // import LocomotiveScroll from "locomotive-scroll"
 
-  const scroll = new LocomotiveScroll({
-    el: document.getElementById("main")!,
-    smooth: true,
+  // const scroll = new LocomotiveScroll({
+  //   el: document.getElementById("main")!,
+  //   smooth: true,
+  // })
+
+  import Lenis from "lenis"
+
+  const lenis = new Lenis()
+
+  lenis.on("scroll", (e) => {
+    console.log(e)
   })
+
+  function raf(time: any) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+
+  requestAnimationFrame(raf)
+
+  // https://github.com/darkroomengineering/lenis?tab=readme-ov-file#recommended-css
 </script>
 
 <style is:global>

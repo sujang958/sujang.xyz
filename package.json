@@ -15,6 +15,7 @@
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.13.1",
     "gsap": "^3.12.5",
+    "lenis": "^1.1.9",
     "locomotive-scroll": "^4.1.4",
     "lucide-svelte": "^0.424.0",
     "svelte": "^4.2.18",
