@@ -16,7 +16,9 @@
 
 <p class="text-5xl font-semibold leading-tight text-balance">
   {#each sentences as sentence, i}
-    <span class={current !== i ? "text-neutral-600" : ""}>{sentence}&nbsp;</span
+    <span
+      class="transition duration-500 {current !== i ? 'text-neutral-600' : ''}"
+      >{sentence}&nbsp;</span
     >
   {/each}
 </p>
