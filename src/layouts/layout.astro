@@ -45,7 +45,7 @@ const { title = "Hunna" } = Astro.props
 
   const lenis = new Lenis()
 
-  lenis.on("scroll", (e) => {
+  lenis.on("scroll", (e: any) => {
     console.log(e)
   })
 
