@@ -14,11 +14,12 @@
   $: if (current <= 0) current = 0
 </script>
 
-<p class="text-5xl font-semibold leading-tight text-balance">
+<p class="text-4xl md:text-5xl font-semibold leading-tight text-balance">
   {#each sentences as sentence, i}
     <span
-      class="transition duration-500 {current !== i ? 'text-neutral-600' : ''}"
-      >{sentence}&nbsp;</span
+      class="transition duration-500 {current !== i
+        ? 'text-neutral-600'
+        : ''}">{sentence}&nbsp;</span
     >
   {/each}
 </p>

@@ -6,7 +6,7 @@ import Layout from "@/layouts/layout.astro"
 
 <Layout>
   <section
-    class="relative flex min-h-screen flex-col items-center justify-center overflow-visible p-24"
+    class="relative flex min-h-screen flex-col items-center justify-center overflow-visible p-12 md:p-24"
   >
     <div
       class="absolute right-[-15%] top-[-48%] rounded-full bg-white p-16 opacity-50 blur-[256px] sm:p-20 md:p-40 xl:p-64"
@@ -22,20 +22,18 @@ import Layout from "@/layouts/layout.astro"
 
     <div class="py-6"></div>
 
-    <p class="text-center text-5xl font-semibold leading-tight">
+    <p class="text-center text-4xl font-semibold leading-tight md:text-5xl">
       I Code and Design,<br />And I Write some things.
     </p>
     <p
-      class="mt-8 max-w-[35rem] text-balance text-center text-base text-neutral-400"
+      class="mt-8 max-w-[35rem] text-balance text-center text-sm text-neutral-400 md:text-base"
     >
       Hello, I'm SongHun Cho and this is my personal portfolio website. I'm into
-      web development, algorithmns, and much more. I also design my projects
-      like websites or some.
+      web development, algorithmns, and much more.<!--  I also design my projects
+      like websites or some. -->
     </p>
 
-    <div class="py-6"></div>
-
-    <div class="py-12"></div>
+    <div class="py-6 md:py-20"></div>
 
     <section class="relative flex flex-row items-center justify-center gap-10">
       <article class="relative h-[21rem] w-64 rounded-xl bg-black p-4">
@@ -52,30 +50,28 @@ import Layout from "@/layouts/layout.astro"
     <!-- TODO: Add some revealing (down to up) animations in turn when loaded -->
   </section>
 
-  <Section class="flex flex-col items-center justify-center pb-20 pt-40">
+  <Section
+    class="flex flex-col items-center justify-center pb-20 pt-24 md:pt-40"
+  >
     <Intro client:load />
     <!-- <div class="py-8"></div> -->
   </Section>
 
   <Section class="flex min-h-[80vh] flex-col py-32">
-    <p class="text-[2.3rem] font-semibold">I'm a sucker for these</p>
-    <div class="mt-8 flex flex-row items-center justify-stretch gap-8">
-      <section class="flex flex-col gap-8">
-        <article class="flex-1 rounded-lg bg-neutral-900">Helo</article>
-        <article class="min-h-3.5 rounded-lg bg-neutral-900">Helo</article>
-      </section>
-      <section class="flex flex-1 flex-col gap-8">
-        <article class="flex-1 rounded-lg bg-neutral-900">Helo</article>
-        <article class="min-h-3.5 rounded-lg bg-neutral-900">Helo</article>
-      </section>
-    </div>
+    <p class="text-3xl font-medium md:text-4xl">Skills</p>
+    <p class="mt-6 text-sm text-neutral-400 md:text-base">
+      I can't get enough of these. I use them in almost all of my projects.
+    </p>
+    <div class="mt-8 flex flex-row items-center justify-stretch gap-8"></div>
   </Section>
 
   <Section class="flex min-h-[50vh] flex-col py-32">
-    <p class="text-[2.3rem] font-semibold">Careers</p>
-    <p class="mt-4 text-base text-neutral-400">
+    <p class="text-3xl font-medium md:text-4xl">Careers</p>
+    <p
+      class="mt-6 max-w-2xl text-balance text-sm text-neutral-400 md:text-base"
+    >
       I haven't even graduated high school yet but I do want to participate in
-      some competitions.
+      some competitions. (but I'm not good enough to win a prize)
     </p>
   </Section>
 </Layout>
