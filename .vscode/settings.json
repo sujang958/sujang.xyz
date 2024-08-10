@@ -1,4 +1,3 @@
 {
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "astro.trace.server": "messages"
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

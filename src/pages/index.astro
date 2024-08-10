@@ -1,207 +1,71 @@
 ---
-import Container from "@/components/Container.astro"
-import Layout from "../layouts/layout.astro"
-import Card from "@/components/card.astro"
+import Section from "@/components/Section.astro"
+import Intro from "@/components/sections/Intro.svelte"
+import Layout from "@/layouts/Layout.astro"
 ---
-
-<style>
-  .text-stroke {
-    -webkit-text-stroke: 1px #9c9c9c;
-  }
-</style>
 
 <Layout>
   <section
-    class="relative flex h-screen w-full flex-col items-center justify-center"
+    class="relative flex min-h-screen flex-col items-center justify-center overflow-visible p-24"
   >
-    <!-- gradient parallax -->
-    <!-- when title gradient change, also change this -->
     <div
-      class="absolute -z-10 flex h-screen min-w-full flex-col justify-between overflow-clip"
+      class="absolute right-[-15%] top-[-48%] rounded-full bg-white p-16 opacity-50 blur-[256px] sm:p-20 md:p-40 xl:p-64"
     >
-      <div
-        id="radial-gradient-1"
-        class="-mt-[10%] -ml-[16%] h-[76vw] w-[76vw] -translate-y-full self-start rounded-full bg-gradient-radial from-blue-500/30 to-transparent opacity-0 blur-3xl filter"
-      >
-      </div>
-      <div
-        id="radial-gradient-2"
-        class="-mb-[10%] -mr-[16%] h-[76vw] w-[76vw] translate-y-full self-end rounded-full bg-gradient-radial from-blue-500/30 to-transparent opacity-0 blur-3xl filter"
-      >
-      </div>
+      &nbsp;
     </div>
 
-    <main class="flex flex-col text-center">
-      <div class="-space-y-10 md:-space-y-20">
-        <div
-          class="hero-texts flex translate-y-12 flex-col -space-y-14 opacity-0"
-        >
-          <p
-            class="z-10 bg-gradient-to-r from-[#363494] to-[#30C4D8] bg-clip-text pb-2 text-7xl font-bold text-transparent transition duration-1000 md:text-8xl"
-          >
-            Imagino,
-          </p>
-          <p
-            class="text-stroke text-7xl font-bold text-transparent md:text-8xl"
-          >
-            Imagino,
-          </p>
-          <p
-            class="text-stroke text-7xl font-bold text-transparent md:text-8xl"
-          >
-            Imagino,
-          </p>
-        </div>
-        <div
-          class="hero-texts flex translate-y-12 flex-col -space-y-14 opacity-0"
-        >
-          <p
-            class="z-10 text-7xl font-bold transition duration-1000 md:text-8xl"
-          >
-            Diseño,
-          </p>
-          <p
-            class="text-stroke text-7xl font-bold text-transparent md:text-8xl"
-          >
-            Diseño,
-          </p>
-          <p
-            class="text-stroke text-7xl font-bold text-transparent md:text-8xl"
-          >
-            Diseño,
-          </p>
-        </div>
-        <div
-          class="hero-texts flex translate-y-12 flex-col -space-y-14 opacity-0"
-        >
-          <p
-            class="z-10 text-7xl font-bold transition duration-1000 md:text-8xl"
-          >
-            Realizo.
-          </p>
-          <p
-            class="text-stroke text-7xl font-bold text-transparent md:text-8xl"
-          >
-            Realizo.
-          </p>
-          <p
-            class="text-stroke text-7xl font-bold text-transparent md:text-8xl"
-          >
-            Realizo.
-          </p>
-        </div>
-      </div>
-      <div class="py-5"></div>
-      <p class="text-base text-neutral-400 md:text-lg">
-        I imagine, design, realize.
-      </p>
-      <div class="py-7"></div>
-      <div class="flex flex-row items-center justify-center gap-x-6">
-        <a
-          href="/#about"
-          class="rounded-lg bg-neutral-100 px-6 py-2 text-sm font-semibold text-neutral-800 md:px-8 md:py-2.5 md:text-lg"
-          >About me</a
-        >
-        <a
-          href="https://github.com/sujang958"
-          target="_blank"
-          class="rounded-lg bg-neutral-800 px-6 py-2 text-sm font-medium text-neutral-100 md:px-8 md:py-2.5 md:text-lg"
-          >Github</a
-        >
-      </div>
-    </main>
-  </section>
-
-  <section class="flex flex-col items-center" id="about">
     <div
-      class="flex h-[78vh] w-full max-w-5xl flex-col items-center justify-center gap-y-2 py-24 text-center"
+      class="absolute bottom-[-50%] left-[-30%] rounded-full bg-white p-16 opacity-50 blur-[256px] sm:p-20 md:p-40 xl:p-64"
     >
-      <img
-        src="/images/hapwy.webp"
-        alt="Happy Happy Happy Happy"
-        class="w-72 object-contain"
-        width="300"
-        height="300"
-      />
-      <p
-        class="bg-gradient-to-b from-white to-neutral-700 bg-clip-text pb-2 text-6xl font-extrabold tracking-tight text-transparent md:text-7xl"
-      >
-        Let me introduce myself
-      </p>
-      <p
-        class="w-3/4 whitespace-normal py-6 text-base leading-normal text-neutral-400 md:text-lg"
-      >
-        Hello, I'm Songhun Cho, a developer and designer based in South Korea. I
-        am currently a student and have been coding since 2017. I'm not only
-        interested in front-end development and UI/UX design, but also web
-        hacking and reverse engineering but I'm not that good at it.
-      </p>
-      <div class="py-2"></div>
-      <a
-        href="#project"
-        class="rounded-lg bg-neutral-100 px-6 py-2.5 text-sm font-semibold text-black"
-        >See projects</a
-      >
+      &nbsp;
     </div>
+
+    <div class="py-6"></div>
+
+    <p class="text-center text-5xl font-semibold leading-tight">
+      I Code and Design,<br />And I Write some things.
+    </p>
+    <p
+      class="mt-8 max-w-[35rem] text-balance text-center text-base text-neutral-400"
+    >
+      Hello, I'm SongHun Cho and this is my personal portfolio website. I'm into
+      web development, algorithmns, and much more. I also design my projects
+      like websites or some.
+    </p>
+
+    <div class="py-6"></div>
+
+    <div class="py-12"></div>
+
+    <section class="relative flex flex-row items-center justify-center gap-10">
+      <article class="relative h-[21rem] w-64 rounded-xl bg-black p-4">
+        <!-- <p
+          class="absolute -bottom-6 left-0 text-xs font-medium text-neutral-700"
+        >
+          Some of my projects
+        </p> -->
+      </article>
+      <article class="-mb-20 h-80 w-96 rounded-xl bg-black p-4"></article>
+      <article class="h-72 w-56 rounded-xl bg-black p-4"></article>
+    </section>
+
+    <!-- TODO: Add some revealing (down to up) animations in turn when loaded -->
   </section>
 
-  <Container class="min-h-screen py-32" id="project">
-    <header class="flex flex-col items-center py-12 text-center">
-      <div class="mb-8 border-l border-neutral-900 py-6"></div>
-      <p
-        class="bg-gradient-to-r from-violet-900 to-purple-700 bg-clip-text text-xl font-semibold text-transparent"
-      >
-        Projects
-      </p>
-      <div class="py-5"></div>
-      <p class="px-4 text-5xl font-bold">Made with ❤️ and Batteries included</p>
-      <div class="py-5"></div>
-      <div
-        class="w-3/4 text-base leading-normal text-neutral-500 md:w-1/2 md:text-lg"
-      >
-        I love creating products with simple & intuitive UI/UX. These are some
-        things I've worked on.
-      </div>
-    </header>
-    <Card title="Diato" description="To-dos organized by day of the week" />
-  </Container>
+  <Section class="flex flex-col items-center justify-center pb-20 pt-40">
+    <Intro client:load />
+    <!-- <div class="py-8"></div> -->
+  </Section>
+
+  <Section class="flex min-h-[80vh] flex-col py-32">
+    <p class="text-[2.4rem] font-semibold">I'm a sucker for these</p>
+  </Section>
+
+  <Section class="flex min-h-[40vh] flex-col py-32">
+    <p class="text-[2.4rem] font-semibold">Careers</p>
+    <p class="mt-4 text-base text-neutral-400">
+      I haven't even graduated high school yet but I do want to participate in
+      some competitions and win the prize!
+    </p>
+  </Section>
 </Layout>
-
-<script>
-  import gsap from "gsap"
-  import { Back } from "gsap"
-  import { CustomEase } from "gsap/all"
-
-  gsap.registerPlugin(CustomEase)
-
-  const radialGradient1 = document.getElementById("radial-gradient-1")
-  const radialGradient2 = document.getElementById("radial-gradient-2")
-
-  const heroTexts = document.querySelectorAll(".hero-texts")
-
-  /*ease: CustomEase.create(
-      "custom",
-      "M0,0 C0,0 0.245,-0.051 0.434,0.118 0.512,0.188 0.584,0.735 0.636,0.838 0.77,1.104 1,1 1,1 "
-    ), */
-
-  gsap.to(radialGradient1, {
-    y: 0,
-    opacity: 1,
-    duration: 0.7,
-  })
-  gsap.to(radialGradient2, {
-    y: 0,
-    opacity: 1,
-    duration: 0.7,
-  })
-
-  heroTexts.forEach((heroTextContainer, i) => {
-    gsap.to(heroTextContainer, {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      delay: i * 0.2,
-      ease: Back.easeOut.config(1.1),
-    })
-  })
-</script>

@@ -1,8 +1,6 @@
 {
-  "extends": "astro/tsconfigs/base",
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "verbatimModuleSyntax": true,
-    "moduleResolution": "nodenext",
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]

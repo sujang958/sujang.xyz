@@ -1,9 +1,10 @@
 import { defineConfig } from "astro/config"
 
-// https://astro.build/config
 import tailwind from "@astrojs/tailwind"
+import svelte from "@astrojs/svelte"
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind({ config: { applyBaseStyles: true } })],
+  devToolbar: { enabled: false },
+  integrations: [tailwind({ applyBaseStyles: true }), svelte({})],
 })
