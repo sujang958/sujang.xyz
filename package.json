@@ -13,6 +13,7 @@
     "@astrojs/check": "^0.9.1",
     "@astrojs/svelte": "^5.7.0",
     "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/ts-plugin": "^1.9.1",
     "astro": "^4.13.1",
     "gsap": "^3.12.5",
     "lenis": "^1.1.9",
