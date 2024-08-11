@@ -34,13 +34,14 @@ const { title = "Hunna" } = Astro.props
 </html>
 
 <script>
+  import "lenis/dist/lenis.css"
+
   // import LocomotiveScroll from "locomotive-scroll"
 
   // const scroll = new LocomotiveScroll({
   //   el: document.getElementById("main")!,
   //   smooth: true,
   // })
-
   import Lenis from "lenis"
 
   const lenis = new Lenis()
@@ -48,6 +49,14 @@ const { title = "Hunna" } = Astro.props
   lenis.on("scroll", (e: any) => {
     console.log(e)
   })
+
+  // lenis.on("scroll", ScrollTrigger.update)
+
+  // gsap.ticker.add((time) => {
+  //   lenis.raf(time * 1000)
+  // })
+
+  // gsap.ticker.lagSmoothing(0)
 
   function raf(time: any) {
     lenis.raf(time)

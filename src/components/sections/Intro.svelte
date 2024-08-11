@@ -1,9 +1,11 @@
 <script lang="ts">
   import { MoveLeft, MoveRight, RotateCcw } from "lucide-svelte"
   import Button from "../Button.svelte"
+  import { onMount } from "svelte"
+  import gsap from "@/utils/gsap"
 
   const sentences = [
-    " I'm a 16 y/o developer,",
+    "I'm a 16 y/o developer,",
     "who loves web development and graphic design.",
     "I'm very keen on building things that can solve small things in everyday life.",
   ]
@@ -14,9 +16,12 @@
   $: if (current <= 0) current = 0
 </script>
 
+<!-- <div id="s2-m1" class="p-2 bg-white absolute"></div> -->
+
 <p class="text-4xl md:text-5xl font-semibold leading-tight text-balance">
   {#each sentences as sentence, i}
     <span
+      id="s2-s{i}"
       class="transition leading-tight duration-500 {current !== i
         ? 'text-neutral-600'
         : ''}">{sentence}&nbsp;</span
