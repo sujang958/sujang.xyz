@@ -5,6 +5,33 @@ import Layout from "@/layouts/layout.astro"
 ---
 
 <Layout>
+  <script>
+    import gsap from "gsap"
+
+    const heroTexts = document.querySelectorAll(".hero-text")
+    const projectContainers = document.querySelectorAll(".project-container ")
+
+    heroTexts.forEach((element, i) => {
+      gsap.to(element, {
+        opacity: 1,
+        y: 0,
+        delay: 0.25 * i,
+        duration: 1,
+        ease: "expo.out",
+      })
+    })
+
+    projectContainers.forEach((element, i) => {
+      gsap.fromTo(
+        element,
+        { y: 64, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, delay: 0.2 * i },
+      )
+    })
+
+    gsap.to("#s1-description", { opacity: 1, delay: 0.25 * heroTexts.length })
+  </script>
+
   <section
     class="relative flex min-h-screen flex-col items-center justify-center overflow-visible p-12 md:p-24"
   >
@@ -22,32 +49,40 @@ import Layout from "@/layouts/layout.astro"
 
     <div class="py-6"></div>
 
-    <p class="text-center text-4xl font-semibold leading-tight md:text-5xl">
-      I Code and Design,<br />And I Write some things.
-    </p>
+    <div class="flex flex-col gap-y-4 text-center">
+      <p
+        class="hero-text translate-y-16 text-4xl font-semibold opacity-0 md:text-5xl"
+      >
+        I Code and Design,
+      </p><p
+        class="hero-text translate-y-16 text-4xl font-semibold opacity-0 md:text-5xl"
+      >
+        And I Write some things.
+      </p>
+    </div>
+
     <p
-      class="mt-8 max-w-[35rem] text-balance text-center text-sm text-neutral-400 md:text-base"
+      id="s1-description"
+      class="mt-8 max-w-[35rem] text-balance text-center text-sm text-neutral-400 opacity-0 md:text-base"
     >
       Hello, I'm SongHun Cho and this is my personal portfolio website. I'm into
-      web development, algorithmns, and much more.<!--  I also design my projects
-      like websites or some. -->
+      web development, algorithmns, and much more.
     </p>
 
-    <div class="py-6 md:py-20"></div>
+    <div class="py-6 md:py-16"></div>
 
     <section class="relative flex flex-row items-center justify-center gap-10">
-      <article class="relative h-[21rem] w-64 rounded-xl bg-black p-4">
-        <!-- <p
-          class="absolute -bottom-6 left-0 text-xs font-medium text-neutral-700"
-        >
-          Some of my projects
-        </p> -->
+      <article
+        class="project-container relative h-[21rem] w-64 rounded-xl bg-black p-4"
+      >
       </article>
-      <article class="-mb-20 h-80 w-96 rounded-xl bg-black p-4"></article>
-      <article class="h-72 w-56 rounded-xl bg-black p-4"></article>
+      <article
+        class="project-container -mb-20 h-80 w-96 rounded-xl bg-black p-4"
+      >
+      </article>
+      <article class="project-container h-72 w-56 rounded-xl bg-black p-4">
+      </article>
     </section>
-
-    <!-- TODO: Add some revealing (down to up) animations in turn when loaded -->
   </section>
 
   <Section
